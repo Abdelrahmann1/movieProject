@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px 30px;
+    font-size: 17px;
+    padding: 4px;
+    color: white;
+    background: linear-gradient(45deg, #ffd195, #ffb283);
+}
+
+.container{
+    background-color: #232B2B;
+    padding: 5px 20px 15px 20px;
+    border: 20px solid #4daea1;
+    border-radius: 20px;
+}
+table{
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea{
+    padding: 12px;
+    border: 1px solid #ccff;
+    border-radius: 5px;
+    margin: 10px;
+    max-lines: 10;
+    resize: none;
+    &:focus {
+        outline: none;
+        border: 1px solid darken(#ddd, 5%);
+        box-shadow: inset 0 0 0.5rem darken(#ddd, 5%);
+      }
+}
+textarea{
+    width: 100%;
+}
+::-webkit-input-placeholder {
+    line-height: 60px;
+}
+
+fieldset{
+    background-color: rgb(255, 255, 255);
+    border: 2PX solid #ccff;
+}
+
+.main_heading,.button_holder{
+    text-align: center;
+}
+
+input[type="submit"]{
+    background-color:#DC3D24;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 25%;
+}
+
+input[type="submit"]:hover{
+    background-color:#4daea1;
+}
+
+/* ? character counter */
+.wrapper {
+    max-width: 75%;
+    margin: auto;
+  }
+  
+  #the-count {
+    float: right;
+    padding: 0.1rem 0 0 0;
+    font-size: 0.875rem;
+  }
+
+
+/* ! Stars */
+
+.rating-box {
+  position: relative;
+  margin: 20px 10px;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+.rating-box header {
+  font-size: 22px;
+  color: #dadada;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.rating-box .stars {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: center;
+}
+.stars i {
+  color: #e6e6e6;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars i.active {
+  color: #ff9c1a;
+}
+#star2{
+    padding-top: 25px;
+}
+#star3{
+    padding-top: 50px;
+}
+#star4{
+    padding-top: 25px;
+}

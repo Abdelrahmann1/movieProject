@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Us</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <h1 class="main_heading">Let us know what you think!</h1>
+            <p class="main_heading">Your opinion is very important to us and can help us improve our services </p><p class="main_heading"> take a moment and let us know how satisfied you are with our services</p>
+        
+            <table>
+                <tr>
+                    <td>
+                        Name 
+                    </td>
+                    <td>
+                        <input type="text"required name="name" placeholder="your name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email 
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email" required placeholder="your Email Address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Comment 
+                    </td>
+                    <td>
+                        <textarea  required Comment="Comment" placeholder="Your Comment" id="textarea" cols="50" rows="3" maxlength="200" ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span id="the-count">
+                            <span id="current">0</span>
+                            <span id="maximum">/ 200</span>
+                          </span>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="rating-box">
+                <header>How was your experience? </header>
+                <div class="stars">
+                  <i class="fa-solid fa-star" id="star1"></i>
+                  <i class="fa-solid fa-star" id="star2"></i>
+                  <i class="fa-solid fa-star" id="star3"></i>
+                  <i class="fa-solid fa-star" id="star4"></i>
+                  <i class="fa-solid fa-star" id="star5"></i>
+                </div>
+              </div>
+            
+            <div class="button_holder">
+                <input type="submit" value="Submit" >
+            </div>
+    
+        </form>
+        </div>
+        <script src="js/script.js"></script>
+</body>
+</html>
