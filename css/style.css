@@ -153,11 +153,18 @@ header ul li a{
     color: white;
     text-decoration: none;
     margin-right: 50px;
-    margin-left: 50px;
+    margin-left: 50px; 
+    font-size: small;
 }
 
 .big{
     margin-left:200px;
+} 
+
+.footer p{
+    color: white;
+    font-size: small;
+    
 }
 
 
