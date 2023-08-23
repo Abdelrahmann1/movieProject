@@ -1,0 +1,60 @@
+
+/** Manar Css **/
+
+
+
+
+
+
+
+/** test items **/
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1A1A1A;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: center;
+    gap: 20px;
+}
+
+.itemCard{
+    
+    /* transform: translateX(30vw) translateZ(20px); */
+   margin-top: 10px;
+    
+    width: 200px;
+    height: 300px;
+    animation: mymove  ease-in-out 2.5s;
+    /* animation-name: mymove;
+    animation-duration: 2.5s easein; */
+    position: relative;
+   
+    /* animation: mymove 5s ; */
+}
+
+@keyframes mymove {
+   0% {
+    transform: translateX(2000px);
+    opacity: 0;
+}
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+img{
+    border-radius: 35px;
+    width: 100%;
+}
