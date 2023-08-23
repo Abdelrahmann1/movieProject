@@ -17,7 +17,7 @@ body{
 header{
    
     width: 100%;
-    position: fixed;
+    position:relative;
     
     
   
@@ -68,7 +68,7 @@ header ul li a{
     min-height: 100vh;
    
     
-    background-image: url("logo.jpg");
+    background-image: url("assets/logo.jpg");
     background-size:cover;
 
     background-attachment: fixed;
