@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Viewed</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header> 
+    <div class="iteme"> 
+    <div class="card">
+        <div class="poster">
+            <img src="assets\Inglourious Basterds (2009) 0.jpg" alt="">
+        </div>
+        <div class="details">
+            <h2> Movie Name </h2>
+            <p> Directed By quantin Tarantino </p>
+            <p id="rating">7.5</p>
+            <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        </div>
+    </div>
+    <div class="iteme"> 
+        <div class="card">
+            <div class="poster">
+                <img src="assets\Inglourious Basterds (2009) 0.jpg" alt="">
+            </div>
+            <div class="details">
+                <h2> Movie Name </h2>
+                <p> Directed By quantin Tarantino </p>
+                <p id="rating">7.5</p>
+                <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+            </div>
+        </div>
+        <div class="iteme"> 
+            <div class="card">
+                <div class="poster">
+                    <img src="assets\Inglourious Basterds (2009) 0.jpg" alt="">
+                </div>
+                <div class="details">
+                    <h2> Movie Name </h2>
+                    <p> Directed By quantin Tarantino </p>
+                    <p id="rating">7.5</p>
+                    <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+                </div>
+            </div>
+    </header>
+
+    <script >
+(async function getData() {
+    var data =  await fetch ("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
+    var  finalResults = await data.json();
+
+    for (let i = 0; i < finalResults.results.length; i++) {
+        console.log(finalResults.results[i].title);
+       ;
+    }
+    
+})();
+
+    </script>
+</body>
+
+</html>
