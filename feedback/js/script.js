@@ -27,3 +27,14 @@ function feedbackSubmit() {
   }
   alert(`Your Feedback have been submitted sucssessfully with ${stars_count} stars`);
 }
+
+
+  if(localStorage.getItem("userName")&&localStorage.getItem("email")!=null){
+   var userNameStorge=localStorage.getItem("userName")
+   var userInterface = document.getElementById("name")
+   userInterface.value = userNameStorge
+
+   var emailStorge = localStorage.getItem("email")
+   var emailDom = document.getElementById("email")
+   emailDom.value = emailStorge
+  }

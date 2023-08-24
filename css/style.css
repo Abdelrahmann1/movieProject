@@ -17,7 +17,7 @@ body{
 header{
    
     width: 100%;
-    position: fixed;
+    position:relative;
     
     
   
@@ -62,13 +62,13 @@ header ul li a{
     
 
 } 
-#home{
+#home44{
     
     width: 100%; 
     min-height: 100vh;
    
     
-    background-image: url("logo.jpg");
+    background-image: url("assets/logo.jpg");
     background-size:cover;
 
     background-attachment: fixed;
@@ -152,12 +152,19 @@ header ul li a{
 .footer a{
     color: white;
     text-decoration: none;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-right: 50px;
+    margin-left: 50px; 
+    font-size: small;
 }
 
 .big{
     margin-left:200px;
+} 
+
+.footer p{
+    color: white;
+    font-size: small;
+    
 }
 
 
