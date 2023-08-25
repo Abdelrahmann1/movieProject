@@ -5,19 +5,22 @@
 font-family: 'Poppins', sans-serif; 
 margin: 0;
 padding: 0;
-box-sizing: border-box;
+box-sizing: border-box; 
 
 
 }
 body{
-    background-color: black;
+    
+    background-color: black; 
+    
+    
     
 } 
 
 header{
    
     width: 100%;
-    position:relative;
+    position:static;
     
     
   
@@ -63,12 +66,16 @@ header ul li a{
 
 } 
 #home44{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
     
-    width: 100%; 
-    min-height: 100vh;
+   
+    position: static;
    
     
-    background-image: url("assets/logo.jpg");
+    background-image: url("assets\logo.jpg");
     background-size:cover;
 
     background-attachment: fixed;
@@ -81,6 +88,7 @@ header ul li a{
 
 #Search{
     background-color: rgba(105, 105, 105, 0.168);
+    color: white;
 } 
 
  .ul1 li a:hover, .Active{
@@ -88,7 +96,9 @@ header ul li a{
     color:black;
 }
 
-.Movies h2{
+.Movies h2{ 
+    margin-left: 160px;
+    margin-bottom: 40px;
     color: #DE0912;
     
     font-size: 40px;
@@ -96,9 +106,13 @@ header ul li a{
     
 } 
 
-.Movies{
+.photos{
+    display: flex;
+    width: 100%; 
     
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+
     
     
     
@@ -107,7 +121,9 @@ header ul li a{
     
     
     gap:20px;  
-   /* overflow: hidden; */
+    
+
+   
 
     
     
@@ -115,13 +131,8 @@ header ul li a{
 } 
 
 .Movies img{
-    width:200px;
-    height: 300px;
-    /* display: flex; */
-
-    /* float:right; */
     
-
+    
     
     
     
@@ -134,21 +145,20 @@ header ul li a{
    
 
     
-   /* margin-top: 10px;
+  
     
    width: 200px;
    height: 300px;
    animation: mymove  ease-in-out 2.5s;
   
-   position: relative;
+  position: static;
   
    animation: mymove 1s ;
-    */
+    
    
 
 }
-
-/* @keyframes mymove {
+ @keyframes mymove {
   0% {
    transform: translateX(2000px);
    opacity: 0;
@@ -158,7 +168,7 @@ header ul li a{
    opacity: 1;
  }
 
-}  */
+} 
 
 .footer{
     background-color: rgba(128, 128, 128, 0.22);
@@ -167,6 +177,8 @@ header ul li a{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+   
     
 }
 .footer a{
@@ -178,10 +190,9 @@ header ul li a{
 }
 
 .big{ 
-    width: 100%;
-    height: 340;
-    margin-left:200px;
-    position: relative;
+    
+   
+    position: relative ;
     
 } 
 
@@ -207,46 +218,12 @@ header ul li a{
 
 } 
 
-
-.slider{ 
-    display: flex; 
-    font-size: 40px;
-    color: rgb(135, 172, 230);
-    
-     
-     border:none;
-     cursor: pointer;
-     
-     bottom: 10px;
-     left: 10px;
-     /* display: flex; */
-     transform: translate(0px, -150px);
-     
-     background-color:rgba(0, 0, 0, 0);
-     text-decoration: none;
- 
- } 
-
- .slider2{ 
-    display: flex; 
-    font-size: 40px;
-    color: rgb(135, 172, 230);
-    
-     
-     border:none;
-     cursor: pointer;
-     
-     bottom: 10px;
-     right:10px ;
-     /* display: flex; */ 
-     transform: translate(980px, 220px);
-     
-     
-     background-color:rgba(0, 0, 0, 0);
-     text-decoration: none;
  
 
- }
+
+
+
+
 
 
 
