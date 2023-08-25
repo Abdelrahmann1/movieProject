@@ -4,29 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <script src="auth_login.js"></script>
 
-    <title>Document</title>
+
+    <title>Login</title>
 </head>
 <body>
     <div class="login-box">
         <h2>Login</h2>
-        <form>
+        <form onsubmit="alert('dfhsgdh');mylogin();alert('diidu')" >
           <div class="user-box">
-            <input type="text" name="" required="">
-            <label>Username</label>
+            <input type="Email" name=""
+            id="email"
+             required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+            <label>Email</label>
           </div>
+
           <div class="user-box">
-            <input type="password" name="" required="">
+
+            
+            <input type="password" 
+            id="password"
+            name="" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" >
+            
             <label>Password</label>
+
           </div>
           
-          <a href="#" onclick="">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </a>
+          <input type="button" onclick="mylogin()"
+           style=" position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: #042224;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 40px;
+          letter-spacing: 4px">
+          
+        
           <a style="color: white;font-size: xx-small;" href="../register/register.html">don't have an account !</a>
 
           

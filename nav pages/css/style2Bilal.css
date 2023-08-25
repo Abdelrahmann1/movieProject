@@ -5,6 +5,10 @@
 
 
 
+  
+  
+  
+  
 
 
 /** test items **/
@@ -12,22 +16,18 @@
 
 
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
 
 body{
     background-color: #1A1A1A;
 }
 
-main{
+/* main{
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     justify-content: center;
     gap: 20px;
-}
+} */
 
 .itemCard{
     
@@ -37,6 +37,22 @@ main{
     width: 200px;
     height: 300px;
     animation: mymove  ease-in-out 2.5s;
+    /* animation-name: mymove;
+    animation-duration: 2.5s easein; */
+    position: relative;
+   
+    /* animation: mymove 5s ; */
+}
+
+
+.itemCard:hover{
+    
+    /* transform: translateX(30vw) translateZ(20px); */
+   margin-top: 10px;
+    opacity: 0.5;
+    width: 200px;
+    height: 300px;
+    
     /* animation-name: mymove;
     animation-duration: 2.5s easein; */
     position: relative;
@@ -54,7 +70,37 @@ main{
     opacity: 1;
   }
 }
-img{
+/* img{
     border-radius: 35px;
     width: 100%;
-}
+} */
+
+
+/** Testing **/
+.Favorites{
+	width: 4vw;
+	height: 4vw;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	left: -2vw;
+	top: -2vw;
+	margin: auto;
+	z-index: 99999999;
+	box-shadow: 0px 4px 7px rgba(0,0,0,0.39);
+	transition: ease .5s;
+} 
+
+.Favorites :hover{
+	width: 4vw;
+	height: 4vw;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	left: -2vw;
+	top: -2vw;
+	margin: auto;
+	z-index: 99999999;
+	box-shadow: 0px 4px 7px rgba(0,0,0,0.39);
+	transition: ease .5s;
+} 
