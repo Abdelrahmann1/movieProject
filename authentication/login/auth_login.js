@@ -1,26 +1,53 @@
 
-
 function mylogin(){
 
 var passwordStorge=localStorage.getItem("password")
 var emailStorge=localStorage.getItem("email")
 var PasswordInput = document.getElementById("password")  
 var emialInput = document.getElementById("email")
+
 console.log(emailStorge,passwordStorge)
-    alert(emialInput.value);
-    alert(emailStorge)
-    alert(PasswordInput.value);
-    alert(passwordStorge);
     if(emialInput.value==emailStorge&&PasswordInput.value==passwordStorge){
-        alert("done")
+        var responseTitle = document.getElementById("responseTitle")
+        responseTitle.innerHTML = "Thank You!"
+
+        var response = document.getElementById("response")
+        response.innerHTML = "congratulations "
+        openPopUp();
+      
+
 
     }else if(emialInput.value!=emailStorge){
+
+        var responseTitle = document.getElementById("responseTitle")
+        responseTitle.innerHTML = "Worning"
+        var response = document.getElementById("response")
+        response.innerHTML = "email is not correct"
+
+      
+        openPopUp();
         event.preventDefault();
-        alert("email is not correct")
+
     }else if(passwordStorge!=PasswordInput.value){
+        var responseTitle = document.getElementById("responseTitle")
+        responseTitle.innerHTML = "Worning"
+        
+        var response = document.getElementById("response")
+        response.innerHTML = "password is not match"
+        openPopUp();
         event.preventDefault();
-        alert("password is not match")
     }
 
     
 }
+
+popup = document.getElementById("popup")
+
+
+function openPopUp(){
+    popup.classList.add("open-popup")
+}
+function closePopUp(){
+    popup.classList.remove("open-popup")
+}
+
