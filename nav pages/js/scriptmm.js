@@ -19,14 +19,7 @@ btn.onclick=function(){
 };  
  ////////////////////////////////// 
 
-  const continar=document.querySelector(".big");
-  const prev=document.querySelectorAll(".slider");
-  const next=document.querySelectorAll(".slider2"); 
-
-  function click(){ 
-    continar.scrollLeft-=300;
-
-  }
+ 
 
  
 
