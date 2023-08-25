@@ -1,7 +1,7 @@
  body{
     margin: 0;
     padding: 0;
-    // height: 100vh;
+   
 }
 * {
     box-sizing: border-box;
@@ -33,7 +33,6 @@ section {
     -moz-transition: clip-path 100ms;
     -ms-transition: clip-path 100ms;
     -o-transition: clip-path 100ms;
-    // backdrop-filter: blur(10px);
     background-image:url('../assets/images/theater.jpg');
 }
 
