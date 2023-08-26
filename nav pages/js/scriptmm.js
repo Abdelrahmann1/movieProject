@@ -4,8 +4,10 @@ window.onscroll=function(){
         btn.style.display="block";
     }else{
         btn.style.display="none";
-    }
-};
+    } 
+
+}; 
+
 
 btn.onclick=function(){
     scroll({

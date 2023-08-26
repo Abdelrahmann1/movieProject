@@ -1,0 +1,52 @@
+ body{
+    margin: 0;
+    padding: 0;
+   
+}
+* {
+    box-sizing: border-box;
+}
+#oscar{
+    position:relative;
+    height:70px;
+    top:200px;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+section {
+    height: 100vh; 
+    padding: 3em;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    clip-path: circle(70px at var(--x, 50%) var(--y, 50%));
+    transition: clip-path 100ms;
+    -webkit-transition: clip-path 100ms;
+    -moz-transition: clip-path 100ms;
+    -ms-transition: clip-path 100ms;
+    -o-transition: clip-path 100ms;
+    background-image:url('../assets/images/theater.jpg');
+}
+
+span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    cursor: pointer;
+}
+
+.is-open {
+    clip-path: circle(200% at 100% 100%);
+    transition: clip-path 1.3s;
+    transition-timing-function: cubic-bezier(1,-0.01,.01,.99);
+}
