@@ -1,45 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     font-family: 'Lobster', cursive;
-font-family: 'Poppins', sans-serif; 
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 
 }
-body{
+
+body {
+
     background-color: black;
-    
-} 
 
-header{
-   
+
+
+}
+
+header {
+
     width: 100%;
-    position:relative;
-    
-    
-  
-  
-   
-} 
+    position: static;
 
-.header nav{
-    
-    
+
+
+
+
+}
+
+.header nav {
+
+
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    
-} 
 
-.ul1,.ul2{
+}
+
+.ul1,
+.ul2 {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
-    
+
 
 
 }
@@ -47,19 +52,17 @@ header{
 
 
 
-.header nav{
-    gap:30px
-} 
+.header nav {
+    gap: 30px
+}
 
 
-header ul li a{
+header ul li a {
     padding: 6px 15px;
-    border-radius: 20px; 
+    border-radius: 20px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    
-    
 
 } 
 #home44{
@@ -75,129 +78,109 @@ header ul li a{
     background-attachment: fixed;
 }
 
-#img1{
+#img1 {
     width: 60px;
     height: 30px;
-} 
-
-#Search{
-    background-color: rgba(105, 105, 105, 0.168);
-} 
-
- .ul1 li a:hover, .Active{
-    background-color: white;
-    color:black;
 }
 
-.Movies h2{
+#Search {
+    background-color: rgba(105, 105, 105, 0.168);
+    color: white;
+}
+
+.ul1 li a:hover,
+.Active {
+    background-color: white;
+    color: black;
+}
+
+.Movies h2 {
+    margin-left: 130px;
+    margin-bottom: 40px;
     color: #DE0912;
-    
+
     font-size: 40px;
 
-    
-} 
 
-.Movies{
-    
+}
+
+.photos {
+    display: flex;
     width: 100%;
-    
-    
-    
-    
-    
-    
-    
-    gap:20px;  
-   /* overflow: hidden; */
 
-    
-    
-    
-} 
+    justify-content: center;
+    align-items: center;
 
-.Movies img{
-    width:200px;
-    height: 300px;
-    /* display: flex; */
+    gap: 20px;
 
-    /* float:right; */
-    
+}
 
-    
-    
-    
-    
+.Movies img {
 
-    
     margin-top: 20px;
-    
-    
-   
 
-    
-   /* margin-top: 10px;
-    
-   width: 200px;
-   height: 300px;
-   animation: mymove  ease-in-out 2.5s;
-  
-   position: relative;
-  
-   animation: mymove 1s ;
-    */
-   
+    width: 200px;
+    height: 300px;
+    animation: mymove ease-in-out 2.5s;
+
+    position: static;
+
+    animation: mymove 1s;
 
 }
 
-/* @keyframes mymove {
-  0% {
-   transform: translateX(2000px);
-   opacity: 0;
+@keyframes mymove {
+    0% {
+        transform: translateX(2000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
 }
- 100% {
-   transform: translateX(0);
-   opacity: 1;
- }
 
-}  */
-
-.footer{
+.footer {
     background-color: rgba(128, 128, 128, 0.22);
     width: 100%;
     height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    position: absolute;
+
+
 }
-.footer a{
+
+.footer a {
     color: white;
     text-decoration: none;
     margin-right: 50px;
-    margin-left: 50px; 
+    margin-left: 50px;
     font-size: small;
 }
 
-.big{ 
-    width: 100%;
-    height: 340;
-    margin-left:200px;
-    position: relative;
-    
-} 
+.big {
 
-.footer p{
+
+    position: relative;
+
+}
+
+.footer p {
     color: white;
     font-size: small;
-    
-} 
 
-#btn{
-   font-size: 40px;
-   color: rgb(135, 172, 230);
-   background-color: rgba(0, 0, 0, 0);
-    
-    border:none;
+}
+
+#btn {
+    font-size: 40px;
+    color: rgb(135, 172, 230);
+    background-color: rgba(0, 0, 0, 0);
+
+    border: none;
     cursor: pointer;
     position: fixed;
     bottom: 10px;
@@ -206,48 +189,4 @@ header ul li a{
     padding: 0;
     margin: 0;
 
-} 
-
-
-.slider{ 
-    display: flex; 
-    font-size: 40px;
-    color: rgb(135, 172, 230);
-    
-     
-     border:none;
-     cursor: pointer;
-     
-     bottom: 10px;
-     left: 10px;
-     /* display: flex; */
-     transform: translate(0px, -150px);
-     
-     background-color:rgba(0, 0, 0, 0);
-     text-decoration: none;
- 
- } 
-
- .slider2{ 
-    display: flex; 
-    font-size: 40px;
-    color: rgb(135, 172, 230);
-    
-     
-     border:none;
-     cursor: pointer;
-     
-     bottom: 10px;
-     right:10px ;
-     /* display: flex; */ 
-     transform: translate(980px, 220px);
-     
-     
-     background-color:rgba(0, 0, 0, 0);
-     text-decoration: none;
- 
-
- }
-
-
-
+}
