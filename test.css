@@ -82,7 +82,11 @@ body{
 }
 
 .card .details h2{
-font-size: 35px;
+    color: white;
+font-size: 25px;
+font-weight: bolder;
+text-shadow: 2px 2px  #2B2C28;
+
 }
 
 
@@ -132,6 +136,7 @@ nav{
 }
 
 #cardContainer{
+    
     margin-right: 40px;
     margin-left: 40px;
     display: flex;
@@ -139,6 +144,14 @@ nav{
     flex-wrap: wrap;
 }
 
-#favorite{
-    
+.favorite{
+    position: absolute;
+    bottom: 310px;
+    left: 230px;
+    cursor: pointer;
+    font-size: 40px;
+    color: orangered;
+    z-index: 9999;
 }
+
+
