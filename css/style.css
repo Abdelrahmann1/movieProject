@@ -116,16 +116,18 @@ header ul li a {
 }
 
 .Movies img {
-
+  display: flex;
+  float: left;
     margin-top: 20px;
-
-    width: 200px;
-    height: 300px;
+     width: 120px;
+    height: 120px;
+    
+    
     animation: mymove ease-in-out 2.5s;
 
-    position: static;
+    /* position: static; */
 
-    animation: mymove 1s;
+    animation: mymove 1s; 
 
 }
 
@@ -189,4 +191,21 @@ header ul li a {
     padding: 0;
     margin: 0;
 
+}  
+
+#bilal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+    float: left;
 }
+
+
+
+ /* #bilal{
+column-count:5;
+column-gap: 2px;
+column-rule: 3px solid red;
+columns: 8 2px;} */
