@@ -30,7 +30,7 @@ var topRated;
 
     for (let i = 0; i <5; i++) {
         
-    var card = `<div class="card" ">
+    var card = `<div class="card" >
     <div class="poster">
         <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
        
@@ -44,15 +44,15 @@ var topRated;
     </div>
     
     </div>` ;
-        $("#bilal").append(card);
+        $(".cards2").append(card);
         
         
     }
     })();  
 
-    $( function() {
-        $( "#bilal" ).slider();
-      } );
+    // $( function() {
+    //     $( ".cards2" ).slider();
+    //   } );
 
 
  

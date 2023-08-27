@@ -99,12 +99,14 @@ header ul li a {
     margin-bottom: 40px;
     color: #DE0912;
 
-    font-size: 40px;
+    font-size: 40px; 
+
+
 
 
 }
 
-.photos {
+/* .photos {
     display: flex;
     width: 100%;
 
@@ -113,7 +115,7 @@ header ul li a {
 
     gap: 20px;
 
-}
+} */
 
 .Movies img {
   display: flex;
