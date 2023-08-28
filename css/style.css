@@ -6,8 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-
 }
 
 body {
@@ -150,6 +148,7 @@ header ul li a {
     justify-content: center;
     align-items: center;
     position: absolute;
+    
 
 
 }

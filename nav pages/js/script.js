@@ -1,41 +1,99 @@
 
+//     var Seasons = {
+//         "18":'Action',
+//         "12":'Animation',
+// }
 
+        var genersList = {
+            18:"action",
+            12:"Adventure",
+            16:"Animation",
+            35:"Comedy",
+            80:"Crime",
+            14:"Fantasy",
+            99:"Documentary",
+            18 :"Drama",
+            10751:"Family",
+            36:"History",
+             27 :"Horror", 
+             10402: "Music",
+             9648:"Mystery",
+             10749:"Romance",
+             878:"Science Fiction",
+             10770:"TV Movie",
+             53:"Thriller",
+             10752:"War",
+             37:"Western",
+    
+        }
 
+// 
 
-
+    
 var topRated;
 (async function getTopRated() {
     var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
     topRated = await data.json();
 
 
-    const favoriteCards = [];
+   
+            function getFirstGener(i,x) {
+                // if (genersList[topRated.results[i].genre_ids[x]]==undefined) {
+                    
+                //     var gener1= document.getElementById("secondgener");
+                //     gener1.style.display="none";
+                // }
 
+                return genersList[topRated.results[i].genre_ids[x]];
+            }
+            
+
+            
+  
     for (let i = 0; i < 18; i++) {
-        
-    var card = `<div class="card" ">
+
+        // console.log(allGener(i));
+    var card = `<div class="card" onclick="getTheMovie(this)">
     <div class="poster">
         <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
        
     </div>
     <div class="details">
-     <i class="fa-regular fa-heart" id="favorite" ></i> 
+     <i class="fa-regular fa-heart" id="favorite" onclick="addToFavorite(${topRated.results[i].id}, this)"></i> 
         <h2> ${topRated.results[i].title}  </h2>
         <p>${topRated.results[i].release_date}  </p>
         <p id="rating">${topRated.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        
+        <div id="tags"> <span id="firstgener">${getFirstGener(i,0)}</span> 
+         </div>
+
     </div>
     
     </div>` ;
+
         $("#cardContainer").append(card);
-        
-        
+        // alert(list[]);
     }
     })();
+    // 
+    // topRated.results[i].genre_ids[0];
 
-
-
+        var arr = [] ;
+   function addToFavorite(id,elem) {
+    arr.push(id);
+       localStorage.setItem("favoriteList",JSON.stringify(arr));
+       let items = ( JSON.parse(localStorage.getItem("favoriteList")));
+       $(elem).removeClass("fa-regular fa-heart");
+       $(elem).addClass("fa-solid fa-heart");
+    }
    
+
+    function getTheMovie(movie){ 
+       console.log(movie); 
+    }
+
+    
+
 // $(document).ready(function(){
 //     var favoriteIcon = document.getElementById('favorite');
 //     favoriteIcon.addEventListener('click', addToFavorites);
@@ -47,6 +105,7 @@ var topRated;
 //        // Add code to save the card as a favorite
 //      }
     
+
 
 
 
