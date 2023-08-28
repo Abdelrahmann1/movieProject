@@ -83,9 +83,9 @@ var topRated;
 
 
    function addToFavorite(id,elem) {
-    
-        arr.push(id);
-        localStorage.setItem("favoriteList",JSON.stringify(arr));
+        
+        selctedMovies.push(id);
+        localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
        $(elem).addClass("fa-solid fa-heart");
     
        
