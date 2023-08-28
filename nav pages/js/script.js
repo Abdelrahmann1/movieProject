@@ -51,7 +51,7 @@ var topRated;
             }
             
 
-            
+
   
     for (let i = 0; i < 18; i++) {
 
@@ -62,7 +62,7 @@ var topRated;
        
     </div>
     <div class="details">
-     <i class="fa-regular fa-heart" id="favorite" onclick="addToFavorite(${topRated.results[i].id}, this)"></i> 
+     <i class="${(selctedMovies.includes(topRated.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite" id="favorite" onclick="addToFavorite(${topRated.results[i].id}, this)"></i> 
         <h2> ${topRated.results[i].title}  </h2>
         <p>${topRated.results[i].release_date}  </p>
         <p id="rating">${topRated.results[i].vote_average}</p>
@@ -75,12 +75,39 @@ var topRated;
     </div>` ;
 
         $("#cardContainer").append(card);
+        
+
+        // if (selctedMovies.includes(topRated.results[i].id)) {
+        //     console.log(topRated.results[i].id +" "+ selctedMovies.includes(topRated.results[i].id)) ;
+            
+        //     $(this).removeClass("fa-regular fa-heart");
+        //     $(this).addClass("fa-solid fa-heart");
+        // }
+       
+      
+            
+      
         // alert(list[]);
     }
+    
     })();
     // 
     // topRated.results[i].genre_ids[0];
 
+
+    // for (let i = 0; i < selctedMovies.length; i++) {
+
+    //     if (selctedMovies.includes(topRated.results[i].id)) {
+
+    //         console.log
+    //         
+           
+    //       }
+    //       else{
+    //         $("#favorite").addClass("fa-regular fa-heart");
+    //   }
+        
+    // }
 
    function addToFavorite(id,elem) {
         
