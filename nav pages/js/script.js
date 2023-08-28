@@ -4,6 +4,9 @@
 //         "12":'Animation',
 // }
 
+        var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
+        var  selctedMovies = [];
+
         var genersList = {
             18:"action",
             12:"Adventure",
@@ -37,14 +40,8 @@ var topRated;
 
 
    
-            function getFirstGener(i,x) {
-                // if (genersList[topRated.results[i].genre_ids[x]]==undefined) {
-                    
-                //     var gener1= document.getElementById("secondgener");
-                //     gener1.style.display="none";
-                // }
-
-                return genersList[topRated.results[i].genre_ids[x]];
+            function getFirstGener(i,x) {  
+              return genersList[topRated.results[i].genre_ids[x]];
             }
             
 
@@ -78,18 +75,60 @@ var topRated;
     // 
     // topRated.results[i].genre_ids[0];
 
-        var arr = [] ;
+
    function addToFavorite(id,elem) {
-    arr.push(id);
-       localStorage.setItem("favoriteList",JSON.stringify(arr));
-       let items = ( JSON.parse(localStorage.getItem("favoriteList")));
-       $(elem).removeClass("fa-regular fa-heart");
+    
+        arr.push(id);
+        localStorage.setItem("favoriteList",JSON.stringify(arr));
        $(elem).addClass("fa-solid fa-heart");
+    
+       
+    //    console.log(arr);
     }
-   
+
+   function getFavorite(){
+        // console.log(arr);
+        // let items = (JSON.parse(localStorage.getItem("favoriteList")));
+
+        
+        // console.log(items);
+        console.log(arr.length);
+        for (let i = 0; i < arr.length; i++) {
+        //    console.log(topRated.results[i].find(arr[i]));
+
+        let obj = topRated.results.find( o => o.id === arr[i]);
+        console.log(obj);
+        
+                var favoritecard = `<div class="card" onclick="getTheMovie(this)">
+    <div class="poster">
+        <img src="https://image.tmdb.org/t/p/w500${obj.poster_path}">
+       
+    </div>
+    <div class="details">
+     <i class="fa-regular fa-heart" id="favorite" onclick="addToFavorite(${obj.id}, this)"></i> 
+        <h2> ${obj.title}  </h2>
+        <p>${obj.release_date}  </p>
+        <p id="rating">${obj.vote_average}</p>
+        
+        <div id="tags"> <span id="firstgener">0</span> 
+         </div>
+
+    </div>
+    
+    </div>` ;
+    $("#favoriteContainer").append(favoritecard);
+            }
+        }
+        
+        
+        
+    
+    
+
 
     function getTheMovie(movie){ 
        console.log(movie); 
+       
     }
 
     

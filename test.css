@@ -154,3 +154,9 @@ nav{
     z-index: 9999;
 }
 
+
+.card2{
+    background-color: aqua;
+    width: 100%;
+    border: blue solid 2px;    
+}
