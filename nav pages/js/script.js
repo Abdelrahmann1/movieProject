@@ -7,6 +7,12 @@
         var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
         var  selctedMovies = [];
 
+       
+   
+        $.each(arr, function(i, el){
+        if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
+        });
+
         var genersList = {
             18:"action",
             12:"Adventure",
@@ -86,17 +92,21 @@ var topRated;
     //    console.log(arr);
     }
 
-   function getFavorite(){
+    
+
+
+
+    function getFavorite(){
         // console.log(arr);
         // let items = (JSON.parse(localStorage.getItem("favoriteList")));
 
         
         // console.log(items);
-        console.log(arr.length);
-        for (let i = 0; i < arr.length; i++) {
+        console.log(selctedMovies.length);
+        for (let i = 0; i < selctedMovies.length; i++) {
         //    console.log(topRated.results[i].find(arr[i]));
 
-        let obj = topRated.results.find( o => o.id === arr[i]);
+        let obj =  topRated.results.find( o => o.id === selctedMovies[i]);
         console.log(obj);
         
                 var favoritecard = `<div class="card" onclick="getTheMovie(this)">
@@ -121,7 +131,7 @@ var topRated;
         }
         
         
-        
+   
     
     
 
