@@ -106,16 +106,7 @@ header ul li a {
 
 }
 
-/* .photos {
-    display: flex;
-    width: 100%;
 
-    justify-content: center;
-    align-items: center;
-
-    gap: 20px;
-
-} */
 
 .Movies img {
   display: flex;
@@ -146,39 +137,6 @@ header ul li a {
 
 }
 
-/* .footer {
-    background-color: rgba(128, 128, 128, 0.22);
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute; 
-    clear: both;
-
-
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    margin-right: 50px;
-    margin-left: 50px;
-    font-size: small;
-}
-
-.big {
-
-
-    position: relative;
-
-}
-
-.footer p {
-    color: white;
-    font-size: small;
-
-} */
 
 #btn {
     font-size: 40px;
@@ -196,19 +154,3 @@ header ul li a {
 
 }  
 
-/* #bilal{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-   
-    float: left;
-} */
-
-
-
- /* #bilal{
-column-count:5;
-column-gap: 2px;
-column-rule: 3px solid red;
-columns: 8 2px;} */

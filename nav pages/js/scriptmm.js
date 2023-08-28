@@ -28,7 +28,7 @@ var topRated;
 
     const favoriteCards = [];
 
-    for (let i = 0; i <5; i++) {
+    for (let i = 0; i <4; i++) {
         
     var card = `<div class="card" >
     <div class="poster">
