@@ -36,6 +36,7 @@
     
         }
 
+    //    alert(topRated.results[0].genre_ids[0])
 // 
 
 function getFirstGener(i,x) {  
