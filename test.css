@@ -13,7 +13,7 @@ body{
 }
 .card {
     margin: 15px;
-    animation: mymove  ease-in-out 2.5s;
+    /* animation: mymove  ease-in-out 2.5s; */
     float: left;
     overflow: hidden;
     /* margin: 10px; */
@@ -144,7 +144,7 @@ nav{
     flex-wrap: wrap;
 }
 
-.favorite{
+.fa-regular ,.fa-solid {
     position: absolute;
     bottom: 310px;
     left: 230px;
