@@ -7,7 +7,7 @@
         var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
         var  selctedMovies = [];
 
-       
+        
    
         $.each(arr, function(i, el){
         if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
@@ -38,7 +38,16 @@
 
 // 
 
-    
+function getFirstGener(i,x) {  
+    return genersList[topRated.results[i].genre_ids[x]];
+  }
+
+  function getFavoriteGener(i,x) {  
+    return genersList[selctedMovies[i]];
+
+  }
+
+ 
 var topRated;
 (async function getTopRated() {
     var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
@@ -46,9 +55,7 @@ var topRated;
 
 
    
-            function getFirstGener(i,x) {  
-              return genersList[topRated.results[i].genre_ids[x]];
-            }
+            
             
 
 
@@ -147,7 +154,7 @@ var topRated;
         <p>${obj.release_date}  </p>
         <p id="rating">${obj.vote_average}</p>
         
-        <div id="tags"> <span id="firstgener">0</span> 
+        <div id="tags"> <span id="firstgener">${genersList[obj.genre_ids[0]]}</span> 
          </div>
 
     </div>
