@@ -132,18 +132,23 @@ var topRated;
 
     
 
-    function removeFromFavorite(id) {
-        var index = selctedMovies.indexOf(id);
-         if (index !== -1) {
-        selctedMovies.splice(index, 1);
-        localStorage.removeItem("favoriteList",JSON.stringify(selctedMovies));
-         $(elem).removeClass("fa-solid");
-        $(elem).addClass("fa-regular ");
-        console.log(selctedMovies);
-            }
-        
 
+
+    function removeFromFavorite(id,elem) {
+        location.reload();
+        var index = selctedMovies.indexOf(id);
+            if (index !== -1) {
+           selctedMovies.splice(index, 1);
+           localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
+            $(elem).removeClass("fa-solid");
+            $(elem).addClass("fa-regular");
+            // $('#favoriteContainer').load('#favoriteContainer')
+            }
+            
+            
     }
+
+    
 
     function getFavorite(){
         // console.log(arr);
@@ -164,7 +169,7 @@ var topRated;
        
     </div>
     <div class="details">
-     <i class="fa-regular fa-heart" id="favorite" onclick="addToFavorite(${obj.id}, this)"></i> 
+     <i class="fa-solid fa-heart" id="favorite" onclick="removeFromFavorite(${obj.id}, this)"></i> 
         <h2> ${obj.title}  </h2>
         <p>${obj.release_date}  </p>
         <p id="rating">${obj.vote_average}</p>
