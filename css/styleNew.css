@@ -114,3 +114,19 @@
       width: 100%;
     }
   }
+
+  .fa-square-x-twitter{
+    font-size: 30px;
+    color: #1D9BF0;
+  }
+
+  .fa-linkedin{
+    font-size: 30px;
+    color: #2A4779;
+  }
+
+
+  .fa-github{
+    font-size: 30px;
+    color: gray;
+  }
