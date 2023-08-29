@@ -1,6 +1,6 @@
 let btn =document.getElementById("btn");
 window.onscroll=function(){
-    if(scrollY>=532.55810546875){
+    if(scrollY>=605.38916015625){
         btn.style.display="block";
     }else{
         btn.style.display="none";
