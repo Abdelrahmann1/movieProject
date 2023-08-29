@@ -64,13 +64,18 @@ var topRated;
     for (let i = 0; i < 18; i++) {
 
         // console.log(allGener(i));
-    var card = `<div class="card" onclick="getTheMovie(this)">
+    var card = `<div class="card" >
     <div class="poster">
         <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
        
     </div>
     <div class="details">
-     <i class="${(selctedMovies.includes(topRated.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite" id="favorite" onclick="addToFavorite(${topRated.results[i].id}, this)"></i> 
+     <i class="${(selctedMovies.includes(topRated.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite"
+      id="favorite" 
+
+       onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
+
+
         <h2> ${topRated.results[i].title}  </h2>
         <p>${topRated.results[i].release_date}  </p>
         <p id="rating">${topRated.results[i].vote_average}</p>
@@ -85,51 +90,60 @@ var topRated;
         $("#cardContainer").append(card);
         
 
-        // if (selctedMovies.includes(topRated.results[i].id)) {
-        //     console.log(topRated.results[i].id +" "+ selctedMovies.includes(topRated.results[i].id)) ;
-            
-        //     $(this).removeClass("fa-regular fa-heart");
-        //     $(this).addClass("fa-solid fa-heart");
-        // }
-       
-      
-            
-      
-        // alert(list[]);
+        
     }
     
     })();
-    // 
-    // topRated.results[i].genre_ids[0];
 
-
-    // for (let i = 0; i < selctedMovies.length; i++) {
-
-    //     if (selctedMovies.includes(topRated.results[i].id)) {
-
-    //         console.log
-    //         
+  
+    function toggleFav(id,elem) {
+        if(elem.classList.contains("fa-regular")){
+            selctedMovies.push(id);
+            localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
+            $(elem).removeClass("fa-regular");
+           $(elem).addClass("fa-solid");
            
-    //       }
-    //       else{
-    //         $("#favorite").addClass("fa-regular fa-heart");
-    //   }
+           
+        }
+        else if(elem.classList.contains("fa-solid")){
+            var index = selctedMovies.indexOf(id);
+            if (index !== -1) {
+           selctedMovies.splice(index, 1);
+           localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
+            $(elem).removeClass("fa-solid");
+           $(elem).addClass("fa-regular ");
         
-    // }
+               }
+           
+
+        }
+    }
+
 
    function addToFavorite(id,elem) {
         
+
         selctedMovies.push(id);
         localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
        $(elem).addClass("fa-solid fa-heart");
     
-       
-    //    console.log(arr);
+  
     }
 
     
 
+    function removeFromFavorite(id) {
+        var index = selctedMovies.indexOf(id);
+         if (index !== -1) {
+        selctedMovies.splice(index, 1);
+        localStorage.removeItem("favoriteList",JSON.stringify(selctedMovies));
+         $(elem).removeClass("fa-solid");
+        $(elem).addClass("fa-regular ");
+        console.log(selctedMovies);
+            }
+        
 
+    }
 
     function getFavorite(){
         // console.log(arr);
