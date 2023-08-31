@@ -22,7 +22,7 @@ body {
 }
 
 .login-box h2 {
-  margin: 0 0 30px;
+  margin: 0 0 50px;
   padding: 0;
   color: #fff;
   text-align: center;
@@ -43,6 +43,82 @@ body {
   outline: none;
   background: transparent;
 }
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+} */
+/* ? moooooooooooooooooooooooooooooooooooood */
+.user-box i{
+  position: absolute;
+  top:0;
+  right: 0;
+}
+
+.typcn {
+  position: absolute;
+  /* left: 339px;  */
+  top: 282px;
+  color: #3b476b;
+  font-size: 22px;
+  cursor: pointer;
+}      
+
+.typcn.active {
+  color: #03e9f4;
+}
+
+.error {
+  background: #ff3333;
+  text-align: center;
+  width: 337px;
+  height: 20px;
+  padding: 2px;
+  border: 0;
+  border-radius: 5px;
+  margin: 10px auto 10px;
+  position: absolute;
+  top: 14%;
+  left: 7.2%;
+  color: white;
+  display: none;
+}
+/* remember me */
+
+.rmb {
+  position: absolute;
+  margin-left: -24%;
+  margin-top: 0px;
+  color: #dfdeee;
+  font-size: 13px;
+}
+
+[type=checkbox]:checked + span:before {/* <-- style its checked state */
+  font-family: FontAwesome;
+  font-size: 16px;
+  content: "\f00c";
+  position: absolute;
+  top: -4px;
+  color: #896cec;
+  left: -1px;
+  width: 13px;
+}
+
+
+/* ?moooooooooooooooooooooooooooooooooood */
+
+
+
 .login-box .user-box label {
   position: absolute;
   top:0;

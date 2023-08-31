@@ -3,7 +3,7 @@ window.onscroll=function(){
     if(scrollY>=605.38916015625){
         btn.style.display="block";
     }else{
-        btn.style.display="none";
+        btn.style.display="block";
     } 
 
 }; 
