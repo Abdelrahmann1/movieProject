@@ -1,10 +1,20 @@
+var eye = document.getElementById('eye');
+var PasswordInput = document.getElementById("password") 
+eye.addEventListener('click',togglePass);
+function togglePass(){
 
+    eye.classList.toggle('active');
+ 
+    (PasswordInput.type == 'password') ? PasswordInput.type = 'text' : PasswordInput.type = 'password';
+}
 function mylogin(){
 
 var passwordStorge=localStorage.getItem("password")
 var emailStorge=localStorage.getItem("email")
-var PasswordInput = document.getElementById("password")  
-var emialInput = document.getElementById("email")
+ 
+    var emialInput = document.getElementById("email");
+
+    
 
 console.log(emailStorge,passwordStorge)
     if(emialInput.value==emailStorge&&PasswordInput.value==passwordStorge){

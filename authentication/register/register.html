@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" integrity="sha512-RibaM8rs5cOvzf+pDw9BOiH4dy+VTOxxzfwONMkOOd/lFbKWcirhXkWcSd0S6GPwfQRT4OrjT8iAKVC5iIvMRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" integrity="sha512-YTL2qFiv2wZNnC764l1DD5zN6lYxDzJ89Ss6zj6YoYIzr6+zwjdVKM1sUR+971X3h7qWCa9cPUBXyYqhOqWWLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="register.css">
     <title>Register</title>
 </head>
 <body>
   <div class="login-box">
     <h2>Register</h2>
+    <!-- TODO set autocomplete to false  -->
+    <span class="error animated tada" id="msg"></span>
     <form>
       <div class="user-box">
         <input type="text" id="email">
@@ -20,15 +26,30 @@
       </div>
       <div class="user-box">
         <input type="password" id="password">
+        <i class="typcn typcn-eye" id="eye"></i>
         <label>Password</label>
       </div>
-      <a href="#" onclick="setUserInfo()" type="submit">
+      <!-- <div class="user-box">
+        <input type="password" id="password">
+        <label>Confirm Password</label>
+      </div> -->
+
+      <!-- <label>
+        <input type="checkbox">
+        <span></span>
+        <small class="rmb">Remember me</small>
+      </label>
+      <br> -->
+
+
+      <a href="#" onclick="checkStuff()" type="submit">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         Submit
       </a>
+      <a style="color: white;font-size: xx-small;" href="../login/login.html">Already have an account !</a>
     </form>
   </div>
   <div class="popup" id="popup">
