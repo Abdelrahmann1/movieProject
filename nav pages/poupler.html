@@ -4,30 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Rated</title>
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/style2Bilal.css">
     <link rel="stylesheet" href="../css/style.css">
+    
 </head>
 <body>
-
-    <header class="header">
-        
-        <nav>
-            
-            <ul class="ul1">
-                
-                <a href="../index.html"><img src="../assets/logo.jpg" id="img1"></a>
-                <li><a href="../nav pages/TopRated.html">Top Rated</a></li>
-                <li><a href="../nav pages/poupler.html">popular </a></li>
-                <li><a href="../nav pages/playingNow.html">now playing</a></li>
-                <li><a href="../feedback\feedback.html">Contact us</a></li>
-                </ul>
-                <br> <br>
-                <ul class="ul2">
-                <li><a href="#">Themes</a></li>
-                <li><input type="text" placeholder="Search" id="Search"></li>
-            </ul>
-        </nav>
-    </header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+    <div class="container-fluid"  style="background-color: #070617;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html" style="color: red;"  >My Cinema</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03" >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../nav pages/playingNow.html" style="color: azure;">Now Playing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../nav pages/TopRated.html" style="color: azure;">Top Rated</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../nav pages/poupler.html" style="color: azure;">Popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../nav pages\MyFavorite.html" style="color: azure;">Favorite</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: azure;">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../feedback\feedback.html" style="color: azure;">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
     <br><br><br><br><br><br>
     <main id="main-content">
         <div class="itemCard" >
@@ -68,7 +84,11 @@
         </div>  
 
     </main>
-
+     
+    <script src="feedback\js\jquery.min.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.js"></script>
+</body>
     <script src="js/script.js"></script>
 </body>
 </html>
