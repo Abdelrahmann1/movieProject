@@ -64,7 +64,7 @@ var topRated;
     for (let i = 0; i < 18; i++) {
 
         // console.log(allGener(i));
-    var card = `<div class="card" >
+    var card = `<div class="card" onclick=popUp(this)>
     <div class="poster">
         <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
        
@@ -209,9 +209,6 @@ var topRated;
 //      }
     
     
-
-
-
 
 
 
