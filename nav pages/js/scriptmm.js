@@ -1,6 +1,6 @@
 let btn =document.getElementById("btn");
 window.onscroll=function(){
-    if(scrollY>=605.38916015625){
+    if(scrollY>=532.55810546875){
         btn.style.display="block";
     }else{
         btn.style.display="block";
@@ -209,10 +209,4 @@ var topRated;
             
             
         }
-        })(); 
-
-    
-
-
- 
-
+        })();
