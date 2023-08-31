@@ -9,7 +9,7 @@ function setUserInfo(){
     response.innerHTML = "create email successfully"
     openPopUp();
 }
-popup = document.getElementById("popup")
+var popup = document.getElementById("popup")
 
 function openPopUp(){
     popup.classList.add("open-popup")

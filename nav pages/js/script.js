@@ -63,7 +63,7 @@ topRated = await data.json();
 for (let i = 0; i < 18; i++) {
 
 // console.log(allGener(i));
-var card = `<div class="card" onclick=popUp(this)>
+var card = `<div class="card" onclick = "getTheMovie(this)">
 <div class="poster">
 <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
 
@@ -190,7 +190,10 @@ $("#favoriteContainer").append(favoritecard);
 
 
 function getTheMovie(movie){ 
-console.log(movie); 
+ 
+console.log(movie);
+popup.classList.add("open-popup");
+popup.innerHTML= toString(movie);
 
 }
 
@@ -210,6 +213,13 @@ console.log(movie);
 
 
 
+
+$('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
+	
+$("#menu-icon").on("click", function(){
+$("nav").slideToggle();
+$(this).toggleClass("active");
+});
 
 
 
@@ -242,6 +252,47 @@ console.log(movie);
 
 //     </div>`;
 
+
+var popup = document.getElementById("popup")
+
+
+// function openPopUp(){
+    
+// }
+function closePopUp(){
+    popup.classList.remove("open-popup")
+}
+
+
+
+ async function mostPoupler(){ 
+    let Response =await fetch("https://api.themoviedb.org/3/movie/popular?api_key=24ce3ad943eaffe233b9fe1d4450ba6c")
+     let results = await Response.json();
+     
+
+     for (let i = 0; i < 18; i++) {
+
+            
+ $("div").append(`
+ <div class="card">
+     <div class="poster">
+         <img src="https://image.tmdb.org/t/p/w500${results.results[i].poster_path}" alt="">
+        
+     </div>
+     <div class="details">
+      <i class="fa-regular fa-heart" class="favorite" ></i> 
+         <h2>"${results.results[i].title}" </h2>
+         <p> ${results.results[i].release_date} </p>
+         <p id="rating"> ${results.results[i].vote_average}</p>
+         <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+     </div>
+
+ </div>`);
+     }
+
+
+  
+ }
 
 
 
