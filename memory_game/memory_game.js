@@ -43,7 +43,7 @@ else if(img1&&img2){
 }
 function gameOver(){
   setTimeout(()=>{
-retval = confirm("a7a");
+retval = confirm("game over");
 if(retval ==true){
   location.reload();
 }

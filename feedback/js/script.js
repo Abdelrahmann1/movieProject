@@ -33,7 +33,6 @@ function feedbackSubmit() {
    var userNameStorge=localStorage.getItem("userName")
    var userInterface = document.getElementById("name")
    userInterface.value = userNameStorge
-
    var emailStorge = localStorage.getItem("email")
    var emailDom = document.getElementById("email")
    emailDom.value = emailStorge
