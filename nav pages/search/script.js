@@ -4,13 +4,27 @@ var inputElement = $("#movie-name")[0]
 
 var movieWrapper = $("#movie-wrapper")
 
+var input =  $(".form-control")[0];
+var myinput = document.getElementById("search")[0];
 console.log(movieWrapper)
 
+
+
+function loadingData() {
+    // localStorage.setItem("movieSearch",input.value);
+        const urlParams = new URLSearchParams(window.location.search);
+  const greetingValue = urlParams.get('searchValue');
+  console.log(greetingValue);
+}
 
 
 
 async function getSearch() {
 
+    
+
+//      sessionStorage.setItem("searchString",input.value);
+//    var searchString =sessionStorage.getItem("searchString");
 
     const options = {
         method: 'GET',
@@ -19,19 +33,86 @@ async function getSearch() {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZWI2ZGZlOTI5ZmVjM2M0YWMzYmQ4MzI2YTAzMzQyZSIsInN1YiI6IjY0NzMzYzIzZGQ3MzFiMmQ3OWQxODM5MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yMM2Sh6hL8bC2f8Kv1pc7gZZ4BoHF4q8fRDnM3lTFdE'
         }
       };
-      
+    //   console.log(input.value);
       var mydata ;
-    var data = await fetch('https://api.themoviedb.org/3/search/movie?query=batman&include_adult=false&language=en-US&page=1', options)
-        .then(response =>  response.json() )
-        .then(response => console.log(response)).then(
-            response => {
-                mydata = response;
-                console.log(mydata);
-            }
-        )
-        .catch(err => console.error(err));
+    var data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${input.value}&include_adult=false&language=en-US&page=1`, options);
+        mydata = await data.json();
+        console.log(mydata);
+
+
+      var mySearch = document.getElementById("SearchContainer");
+      mySearch.innerHTML= " ";
+    //   $("#SearchContainer").append(" ");
+    
+    function load() {
+        
+        
+    }
+        for (let i = 0; i < mydata.results.length; i++) {
             
-        console.log(await data.json())
+            $("#SearchContainer").append(
+                `
+                <div class="card" onclick = "getTheMovie(this)">
+      <div class="poster">
+      <img src="https://image.tmdb.org/t/p/w500${mydata.results[i].poster_path}">
+      
+      </div>
+      <div class="details">
+      <i class="fa-solid" :"fa-regular"} fa-heart favorite"
+      id="favorite" 
+      
+      onclick= "toggleFav(${mydata.results[i].id},this)" ></i> 
+      
+      
+      <h2> ${mydata.results[i].title}  </h2>
+      <p>${mydata.results[i].release_date}  </p>
+      <p id="rating">${Number( mydata.results[i].vote_average).toFixed(1)}</p>
+      
+      <div id="tags"> <span id="firstgener">20</span> 
+       </div>
+      
+      </div>
+      
+      </div>
+
+                `
+            )
+
+    //           mySearch.innerHTML = `<div class="card" onclick = "getTheMovie(this)">
+    //   <div class="poster">
+    //   <img src="https://image.tmdb.org/t/p/w500${mydata.results[i].poster_path}">
+      
+    //   </div>
+    //   <div class="details">
+    //   <i class="fa-solid" :"fa-regular"} fa-heart favorite"
+    //   id="favorite" 
+      
+    //   onclick= "toggleFav(${mydata.results[i].id},this)" ></i> 
+      
+      
+    //   <h2> ${mydata.results[i].title}  </h2>
+    //   <p>${mydata.results[i].release_date}  </p>
+    //   <p id="rating">${Number( mydata.results[2].vote_average).toFixed(1)}</p>
+      
+    //   <div id="tags"> <span id="firstgener">20</span> 
+    //    </div>
+      
+    //   </div>
+      
+    //   </div>`;
+
+        }
+    
+
+        // .then(response =>  response.json() )
+        // .then(response => console.log(response)).then(
+        //     response => {
+        //       console.log("Hi");
+        //     }
+        // )
+        // .catch(err => console.error(err));  
+        
+        // console.log( data.json())
             // var x = await data.json();
             // console.log(x);
         // for (let i = 0; i < response.results.length; i++) {
@@ -78,3 +159,8 @@ async function getSearch() {
 //      }
 // }   )
 // } )
+function test() {
+   
+  var x = localStorage.getItem("movieSearch");
+    alert(x);
+}
