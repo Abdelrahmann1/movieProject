@@ -44,7 +44,6 @@ return genersList[topRated.results[i].genre_ids[x]];
 
 function getFavoriteGener(i,x) {  
 return genersList[selctedMovies[i]];
-
 }
 
 
@@ -53,12 +52,7 @@ var topRated;
 var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
 topRated = await data.json();
 
-
-
     
-    
-
-
 
 for (let i = 0; i < 18; i++) {
 
@@ -77,7 +71,7 @@ onclick= "toggleFav(${topRated.results[i].id},this)" ></i>
 
 <h2> ${topRated.results[i].title}  </h2>
 <p>${topRated.results[i].release_date}  </p>
-<p id="rating">${topRated.results[i].vote_average}</p>
+<p id="rating">${ Number(topRated.results[i].vote_average).toFixed(1)}</p>
 
 <div id="tags"> <span id="firstgener">${getFirstGener(i,0)}</span> 
  </div>
@@ -94,7 +88,7 @@ $("#cardContainer").append(card);
 
 })();
 
-
+// (Math.round((topRated.results[i].vote_average*100)/100).toFixed(1))
 function toggleFav(id,elem) {
 if(elem.classList.contains("fa-regular")){
     selctedMovies.push(id);
@@ -171,7 +165,7 @@ console.log(obj);
 <i class="fa-solid fa-heart" id="favorite" onclick="removeFromFavorite(${obj.id}, this)"></i> 
 <h2> ${obj.title}  </h2>
 <p>${obj.release_date}  </p>
-<p id="rating">${obj.vote_average}</p>
+<p id="rating">${Number( obj.vote_average).toFixed(1)}</p>
 
 <div id="tags"> <span id="firstgener">${genersList[obj.genre_ids[0]]}</span> 
  </div>
@@ -291,7 +285,7 @@ async function getpopular() {
     
     <h2> ${mostPop.results[i].title}  </h2>
     <p>${mostPop.results[i].release_date}  </p>
-    <p id="rating">${mostPop.results[i].vote_average}</p>
+    <p id="rating">${Number( mostPop.results[i].vote_average).toFixed(1)}</p>
     
     <div id="tags"> <span id="firstgener">20</span> 
      </div>
