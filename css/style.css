@@ -158,7 +158,7 @@ header ul li a {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     cursor: pointer;
-    bottom: 90px;
+    bottom: 15px;
     right: 10px;
     position: fixed;
     display: block;

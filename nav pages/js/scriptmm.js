@@ -1,15 +1,15 @@
-let btn =document.getElementById("btn");
+let btn2 =document.getElementById("btn2");
 window.onscroll=function(){
     if(scrollY>=532.55810546875){
-        btn.style.display="block";
+        btn2.style.display="block";
     }else{
-        btn.style.display="block";
+        btn2.style.display="none";
     } 
 
 }; 
 
 
-btn.onclick=function(){
+btn2.onclick=function(){
     scroll({
         left:0,
         top:0,
@@ -193,7 +193,10 @@ var x;
            
         </div>
         <div class="details">
-            <i class="fa-solid fa-ticket" onclick="getTicket(${nowPlaying.results[i].title})"></i>
+        <i class="${(selctedMovies.includes(topRated.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite"
+        id="favorite" 
+        
+        onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
             <h2> ${nowPlaying.results[i].title} </h2>
             <p>${nowPlaying.results[i].release_date}  </p>
             <p id="rating">${nowPlaying.results[i].vote_average}</p>

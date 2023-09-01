@@ -52,7 +52,7 @@ var topRated;
 var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
 topRated = await data.json();
 
-    
+    topRated.results
 
 for (let i = 0; i < 18; i++) {
 
@@ -67,6 +67,8 @@ var card = `<div class="card" onclick = "getTheMovie(this)">
 id="favorite" 
 
 onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
+
+<button onclick="takeTheMovie(this)"> take it </button>
 
 
 <h2> ${topRated.results[i].title}  </h2>
@@ -88,6 +90,10 @@ $("#cardContainer").append(card);
 
 })();
 
+function takeTheMovie(obj) {
+    alert(obj)
+}
+    
 // (Math.round((topRated.results[i].vote_average*100)/100).toFixed(1))
 function toggleFav(id,elem) {
 if(elem.classList.contains("fa-regular")){
