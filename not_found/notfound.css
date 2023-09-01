@@ -8,7 +8,7 @@ body{
   justify-content: center;
   margin: 0;
   background: #131313;
-  color: aqua;
+  color: #00adef;
   font-size: 96px;
   font-family: 'Fira Mono', monospace;
   letter-spacing: -7px;
@@ -16,6 +16,22 @@ body{
   background-image: url(../assets/images/broken.png);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media (min-width:360px) {
+  .quip {
+      font-size: 30px;
+  }
+}
+@media (min-width:1024px) {
+  .quip {
+      font-size: 40px;
+  }
+}
+@media (min-width:1280px) {
+  .quip {
+      font-size: 55px;
+  }
 }
 
 div{
@@ -78,7 +94,6 @@ div:after{
   }
 }
   .quip{
-      font-size: 3.5vw;
       /* font-size: calc(12px + 1vw); */
-      color:#db1a1a;
+      color:#ee1b24;
   }
