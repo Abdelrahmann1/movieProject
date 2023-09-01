@@ -117,7 +117,6 @@ var x;
 
 
  
-var topRated;
 (async function getTopRated() {
     var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
     topRated = await data.json();
@@ -149,7 +148,7 @@ var topRated;
 
     /////////////////////////////////////////////////////// 
 
-    var topRated;
+   
 (async function getTopRated() {
     var data = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
     topRated = await data.json();
