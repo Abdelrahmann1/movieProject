@@ -6,8 +6,7 @@
 var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
 var  selctedMovies = [];
 
-var allmovies = topRated+nowPlaying;
-alert(allmovies);
+
 
 $.each(arr, function(i, el){
 if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
