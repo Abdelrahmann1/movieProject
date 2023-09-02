@@ -54,7 +54,6 @@ var topRated;
 var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
 topRated = await data.json();
 
-    topRated.results
 
 for (let i = 0; i < 18; i++) {
 
@@ -150,7 +149,7 @@ var index = selctedMovies.indexOf(id);
 
 
 
-function getTopRatedFavorite(){
+ function getTopRatedFavorite(){
 // console.log(arr);
 // let items = (JSON.parse(localStorage.getItem("favoriteList")));
 // console.log(items);
