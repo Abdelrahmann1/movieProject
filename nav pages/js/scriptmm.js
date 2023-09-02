@@ -205,7 +205,7 @@ var x;
         
         </div>` ;
             $(".cards4").append(card);
-            
+        }
             
         }
 
