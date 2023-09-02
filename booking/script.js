@@ -45,3 +45,55 @@ const movieName =  new URLSearchParams(window.location.search).get('movieNameStr
 (function () {
     document.getElementById('movieName').innerHTML += movieName ;
 })();
+
+
+
+
+
+
+
+
+var xhttp = new XMLHttpRequest();
+var fname = document.getElementById("fname");
+var usersList = document.getElementById("usersList");
+var lname = document.getElementById("lname");
+var uAvatar = document.getElementById("uAvatar");
+
+    xhttp.onreadystatechange=function(){
+        if(this.readyState==4 && this.status==200)
+        {
+            var dataAfterConverted= JSON.parse(this.responseText)
+            console.log(dataAfterConverted['data']);
+            
+            fname.value = dataAfterConverted['data'].at(uId).first_name;
+
+            for (var i = 0; i < dataAfterConverted['data'].length; i++) {
+                usersList.innerHTML+=
+                `<option value=${i}>
+            ${dataAfterConverted['data'].at(i).first_name}
+            </option>
+            `;
+            }
+            // usersList.addEventListener("change", function () {
+                    
+            // });
+        }
+    }
+    xhttp.open("GET","https://reqres.in/api/users/",true);
+    xhttp.send();
+
+function getSelectedUser(selectedUser) {
+
+    console.log(selectedUser);
+    xhttp.onreadystatechange=function(){
+        if(this.readyState==4 && this.status==200)
+        {
+            var dataAfterConverted= JSON.parse(this.responseText)
+            uAvatar.src = dataAfterConverted['data'].at(selectedUser).avatar;
+            fname.value = dataAfterConverted['data'].at(selectedUser).first_name;
+            lname.value = dataAfterConverted['data'].at(selectedUser).last_name;
+        }
+    }
+    xhttp.open("GET","https://reqres.in/api/users/",true);
+    xhttp.send();
+    }
