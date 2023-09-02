@@ -44,7 +44,6 @@ return genersList[topRated.results[i].genre_ids[x]];
 
 function getFavoriteGener(i,x) {  
 return genersList[selctedMovies[i]];
-
 }
 
 
@@ -53,17 +52,12 @@ var topRated;
 var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
 topRated = await data.json();
 
-
-
-    
-    
-
-
+    topRated.results
 
 for (let i = 0; i < 18; i++) {
 
 // console.log(allGener(i));
-var card = `<div class="card" onclick=popUp(this)>
+var card = `<div class="card" onclick = "getTheMovie(this)">
 <div class="poster">
 <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
 
@@ -74,10 +68,12 @@ id="favorite"
 
 onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
 
+<button onclick="takeTheMovie(this)"> take it </button>
+
 
 <h2> ${topRated.results[i].title}  </h2>
 <p>${topRated.results[i].release_date}  </p>
-<p id="rating">${topRated.results[i].vote_average}</p>
+<p id="rating">${ Number(topRated.results[i].vote_average).toFixed(1)}</p>
 
 <div id="tags"> <span id="firstgener">${getFirstGener(i,0)}</span> 
  </div>
@@ -94,7 +90,11 @@ $("#cardContainer").append(card);
 
 })();
 
-
+function takeTheMovie(obj) {
+    alert(obj)
+}
+    
+// (Math.round((topRated.results[i].vote_average*100)/100).toFixed(1))
 function toggleFav(id,elem) {
 if(elem.classList.contains("fa-regular")){
     selctedMovies.push(id);
@@ -171,7 +171,7 @@ console.log(obj);
 <i class="fa-solid fa-heart" id="favorite" onclick="removeFromFavorite(${obj.id}, this)"></i> 
 <h2> ${obj.title}  </h2>
 <p>${obj.release_date}  </p>
-<p id="rating">${obj.vote_average}</p>
+<p id="rating">${Number( obj.vote_average).toFixed(1)}</p>
 
 <div id="tags"> <span id="firstgener">${genersList[obj.genre_ids[0]]}</span> 
  </div>
@@ -190,7 +190,10 @@ $("#favoriteContainer").append(favoritecard);
 
 
 function getTheMovie(movie){ 
-console.log(movie); 
+ 
+console.log(movie);
+popup.classList.add("open-popup");
+popup.innerHTML= toString(movie);
 
 }
 
@@ -210,6 +213,13 @@ console.log(movie);
 
 
 
+
+$('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
+	
+$("#menu-icon").on("click", function(){
+$("nav").slideToggle();
+$(this).toggleClass("active");
+});
 
 
 
@@ -243,7 +253,63 @@ console.log(movie);
 //     </div>`;
 
 
+var popup = document.getElementById("popup")
 
+
+// function openPopUp(){
+    
+// }
+function closePopUp(){
+    popup.classList.remove("open-popup")
+}
+
+
+
+
+
+
+async function getpopular() {
+    var data = await fetch("http://api.themoviedb.org/3/movie/popular?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
+    mostPop = await data.json();
+    console.log(mostPop);
+    var x = $("#mostPoupler");
+    console.log(x);
+    for (let i = 0; i < 18; i++) {
+    
+    // console.log(allGener(i));
+    var card = `<div class="card" onclick = "getTheMovie(this)">
+    <div class="poster">
+    <img src="https://image.tmdb.org/t/p/w500${mostPop.results[i].poster_path}">
+    
+    </div>
+    <div class="details">
+    <i class="fa-solid" :"fa-regular"} fa-heart favorite"
+    id="favorite" 
+    
+    onclick= "toggleFav(${mostPop.results[i].id},this)" ></i> 
+    
+    
+    <h2> ${mostPop.results[i].title}  </h2>
+    <p>${mostPop.results[i].release_date}  </p>
+    <p id="rating">${Number( mostPop.results[i].vote_average).toFixed(1)}</p>
+    
+    <div id="tags"> <span id="firstgener">20</span> 
+     </div>
+    
+    </div>
+    
+    </div>` ;
+    
+        
+    $("#mostPoupler").append(
+        card
+    )
+    
+    
+    
+    }
+    
+    };
 
 
 

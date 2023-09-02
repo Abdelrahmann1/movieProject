@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../test.css">
+    <script src="../../jquery/jquery.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css\styleNew.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- <script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script> -->
+
+</head>
+<body  onload="loadingData()" style="background-color: #070617;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid"  style="background-color: #070617;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="../../index.html" style="color: red;"  >My Cinema</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../nav pages/playingNow.html" style="color: azure;">Now Playing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../nav pages/TopRated.html" style="color: azure;">Top Rated</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../nav pages/poupler.html" style="color: azure;">Popular</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../nav pages\MyFavorite.html" style="color: azure;">Favorite</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: azure;">Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../feedback\feedback.html" style="color: azure;">Contact Us</a>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+    <div style="text-align: center;  margin-top: 30px;" >
+        <h2> what are you looking for! </h2>
+        <br>
+        
+        <!-- <button  id =  "search-btn" onclick="getSearch()" >  search  </button> -->
+        <form  class="d-flex" role="search" style="margin: 0px 20%;" action="../search/search.html">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search" >
+            
+          </form>
+          <br>
+          <button class="btn btn-outline-success"  type="submit" onclick="getSearch()" >Search</button>
+    </div>
+
+    <p  id="error" style="text-align: center;" >   </p>
+
+    <p  id="loader" style="text-align: center;" >   </p>
+
+    <div id = "movie-wrapper" class="movie-wrapper">
+
+       
+   
+
+    </div>
+
+
+    <div id="SearchContainer">
+        
+    </div>
+
+    <script src="nav pages\js\scriptmm.js"></script>
+    <script src="nav pages\js\script.js"></script>
+    <script src="feedback\js\jquery.min.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js"></script>
+    <script src="bootstrap-5.2.3-dist/js/bootstrap.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>

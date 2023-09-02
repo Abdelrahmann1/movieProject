@@ -39,3 +39,9 @@ function confirmSeats() {
     // console.log(selectedSeats);
   alert(`You have reserved  ${seats} seats`);
 }
+
+// ? Booking //
+const movieName =  new URLSearchParams(window.location.search).get('movieNameString');
+(function () {
+    document.getElementById('movieName').innerHTML += movieName ;
+})();

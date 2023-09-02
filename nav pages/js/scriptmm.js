@@ -1,15 +1,40 @@
-let btn =document.getElementById("btn");
+var genersList = {
+    18:"action",
+    12:"Adventure",
+    16:"Animation",
+    35:"Comedy",
+    80:"Crime",
+    14:"Fantasy",
+    99:"Documentary",
+    18 :"Drama",
+    10751:"Family",
+    36:"History",
+     27 :"Horror", 
+     10402: "Music",
+     9648:"Mystery",
+     10749:"Romance",
+     878:"Science Fiction",
+     10770:"TV Movie",
+     53:"Thriller",
+     10752:"War",
+     37:"Western",
+}
+function getFirstGener(i,x) {  
+    return genersList[topRated.results[i].genre_ids[x]];
+    }
+
+let btn2 = document.getElementById("btn2");
 window.onscroll=function(){
     if(scrollY>=532.55810546875){
-        btn.style.display="block";
+        btn2.style.display="block";
     }else{
-        btn.style.display="block";
+        btn2.style.display="none";
     } 
 
 }; 
 
 
-btn.onclick=function(){
+btn2.onclick=function(){
     scroll({
         left:0,
         top:0,
@@ -39,7 +64,7 @@ var x;
         <h2> ${x.results[i].title}  </h2>
         <p>${x.results[i].release_date}  </p>
         <p id="rating">${x.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <div id="tags"> <span>${getFirstGener(i,0)}</span> <span>Drama</span> </div>
     </div>
     
     </div>` ;
@@ -117,7 +142,6 @@ var x;
 
 
  
-var topRated;
 (async function getTopRated() {
     var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
     topRated = await data.json();
@@ -136,8 +160,8 @@ var topRated;
      <i class="fa-regular fa-heart" id="favorite" ></i> 
         <h2> ${topRated.results[i].title} </h2>
         <p>${topRated.results[i].release_date}  </p>
-        <p id="rating">${topRated.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <p id="rating">${Number(topRated.results[i].vote_average).toFixed(1)}</p>
+        <div id="tags"> <span>${getFirstGener(i,0)}</span> <span>${getFirstGener(i,1)}</span> </div>
     </div>
     
     </div>` ;
@@ -149,7 +173,7 @@ var topRated;
 
     /////////////////////////////////////////////////////// 
 
-    var topRated;
+   
 (async function getTopRated() {
     var data = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
     topRated = await data.json();
@@ -168,8 +192,8 @@ var topRated;
      <i class="fa-regular fa-heart" id="favorite" ></i> 
         <h2> ${topRated.results[i].title} </h2>
         <p>${topRated.results[i].release_date}  </p>
-        <p id="rating">${topRated.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <p id="rating">${Number(topRated.results[i].vote_average).toFixed(1)}</p>
+        <div id="tags"> <span>${getFirstGener(i,0)}</span></div>
     </div>
     
     </div>` ;
@@ -181,32 +205,40 @@ var topRated;
 
     /////////////////////////////////////////// 
 
-    var topRated;
+    var nowPlaying;
     (async function getTopRated() {
         var data = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
-        topRated = await data.json();
-    
-    
-        const favoriteCards = [];
+        nowPlaying = await data.json();
     
         for (let i = 0; i <4; i++) {
             
         var card = `<div class="card" >
         <div class="poster">
-            <img src="https://image.tmdb.org/t/p/w500${topRated.results[i].poster_path}">
+            <img src="https://image.tmdb.org/t/p/w500${nowPlaying.results[i].poster_path}">
            
         </div>
         <div class="details">
-         <i class="fa-regular fa-heart" id="favorite" ></i> 
-            <h2> ${topRated.results[i].title} </h2>
-            <p>${topRated.results[i].release_date}  </p>
-            <p id="rating">${topRated.results[i].vote_average}</p>
-            <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <i class="${(selctedMovies.includes(topRated.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite"
+        id="favorite" 
+        
+        onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
+            <h2> ${nowPlaying.results[i].title} </h2>
+            <p>${nowPlaying.results[i].release_date}  </p>
+            <p id="rating">${Number(topRated.results[i].vote_average).toFixed(1)}</p>
+            <div id="tags"> <span>${getFirstGener(i,0)}</span> <span>Drama</span> </div>
         </div>
         
         </div>` ;
             $(".cards4").append(card);
-            
+        }
             
         }
-        })();
+
+
+
+})();
+        
+
+function getTicket(title) {
+    console.log(toString(title));
+}

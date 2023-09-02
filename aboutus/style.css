@@ -6,6 +6,7 @@
 /* Global Styles */
 body {
 	font-family: Arial, sans-serif;
+	background-color: #070617;
 }
 /* Header */
 header {
@@ -54,10 +55,12 @@ nav {
 	color: white;
 }
 
+h1{
+	color: #fff;
+}
+
 /* About Section */
 .about {
-	background: rgb(224, 251, 222);
-	background: linear-gradient(360deg, rgb(245, 255, 245) 0%, rgb(223, 46, 46) 50%, rgb(197, 8, 8) 100%);
 	padding: 100px 0 20px 0;
 	text-align: center;
 }
@@ -145,7 +148,7 @@ button:hover {
 }
 
 .card {
-	background-color: white;
+	background-color: #0c0c17;
 	border-radius: 6px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 	overflow: hidden;
@@ -293,7 +296,6 @@ footer {
   .btn {
 	display: inline-block;
 	padding: 0.5em 1em;
-	background: #DE0912;
 	color: #fff;
 	margin: 1em;
 
@@ -308,11 +310,6 @@ footer {
 	text-decoration: none;
   }
 
-
-  .btn:hover, .btn:focus {
-	color: #fff;
-	background: #DE0912;
-  }
   .static-img {
 	display: block;
   }
@@ -349,3 +346,21 @@ footer {
 	}
   }
   
+
+
+
+  .btn-outline-success:hover {
+    background-color: transparent;
+    border: 1px solid #009ad8ed;
+    color: #009ad8;
+}
+.btn-outline-success{
+    border: 1px solid white;
+    color: white;
+    --bs-btn-hover-border-color: #009ad8;
+	--bs-btn-active-bg: transparent;
+	--bs-btn-border-color: transparent;
+	--bs-btn-active-border-color:var(--bs-btn-hover-border-color);
+	--bs-btn-active-color:var(--bs-btn-hover-border-color);
+}
+
