@@ -34,7 +34,7 @@ if(!isjumping){
 
     score = 0;
   }
-},10);  
+},20);  
 
 var isjumping=false;
  
