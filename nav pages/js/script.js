@@ -5,10 +5,6 @@
 
 var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
 var  selctedMovies = [];
-
-
-
-
 $.each(arr, function(i, el){
 if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
 });
@@ -91,9 +87,47 @@ $("#cardContainer").append(card);
 
 })();
 
-function takeTheMovie(obj) {
-    alert(obj)
-}
+
+
+    var playingNow;
+(async function nowPlaying(){ 
+   var Response =await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c")
+   playingNow = await Response.json();
+    
+    
+
+    for (let i = 0; i < 18; i++) {
+
+           
+$("#NowPlayingContainer").append(`
+</div>
+<div class="card">
+    <div class="poster">
+        <img src="https://image.tmdb.org/t/p/w500${playingNow.results[i].poster_path}" alt="">
+       
+    </div>
+    <div class="details">
+    <i class="${(selctedMovies.includes(playingNow.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite"
+    id="favorite" 
+    
+    onclick= "toggleFav(${playingNow.results[i].id},this)" ></i> 
+        <h2>${playingNow.results[i].title} </h2>
+        <p> ${playingNow.results[i].release_date} </p>
+        <p id="rating"> ${playingNow.results[i].vote_average}</p>
+        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+    </div>
+
+</div>`);
+    }
+
+
+ 
+})()
+ 
+
+// function takeTheMovie(obj) {
+//     alert(obj)
+// }
     
 // (Math.round((topRated.results[i].vote_average*100)/100).toFixed(1))
 function toggleFav(id,elem) {
@@ -147,7 +181,13 @@ var index = selctedMovies.indexOf(id);
     
 }
 
+function getFavorite() {
+    getTopRatedFavorite();
+    getNowPlayingFavorite();
+   
 
+
+}
 
 function getTopRatedFavorite(){
 // console.log(arr);
@@ -158,10 +198,10 @@ for (let i = 0; i < selctedMovies.length; i++) {
 //    console.log(topRated.results[i].find(arr[i]));
 
 let obj = topRated.results.find( o => o.id === selctedMovies[i]);
-console.log(obj);
+    console.log(obj.title) ;
 
 
-        var favoritecard = `<div class="card" onclick="getTheMovie(this)">
+        let favoritecard = `<div class="card" onclick="getTheMovie(this)">
 <div class="poster">
 <img src="https://image.tmdb.org/t/p/w500${obj.poster_path}">
 
@@ -187,6 +227,45 @@ $("#favoriteContainer").append(favoritecard);
 
 }
 
+
+
+
+function getNowPlayingFavorite(){
+    // console.log(arr);
+    // let items = (JSON.parse(localStorage.getItem("favoriteList")));
+    // console.log(items);
+    console.log(selctedMovies.length);
+for (let i = 0; i < selctedMovies.length; i++) {
+//    console.log(topRated.results[i].find(arr[i]));
+
+let obj = playingNow.results.find( o => o.id === selctedMovies[i]);
+    console.log(obj.title);
+
+
+        let favoritecard = `<div class="card" onclick="getTheMovie(this)">
+<div class="poster">
+<img src="https://image.tmdb.org/t/p/w500${obj.poster_path}">
+
+</div>
+<div class="details">
+<i class="fa-solid fa-heart" id="favorite" onclick="removeFromFavorite(${obj.id}, this)"></i> 
+<h2> ${obj.title}  </h2>
+<p>${obj.release_date}  </p>
+<p id="rating">${Number(obj.vote_average).toFixed(1)}</p>
+
+<div id="tags"> <span id="firstgener">${genersList[obj.genre_ids[0]]}</span> 
+ </div>
+
+</div>
+
+</div>` ;
+$("#favoriteContainer").append(favoritecard);
+
+    
+    }
+    
+    
+    }
 
 
 
@@ -316,39 +395,7 @@ async function getpopular() {
     };
 
 
-        var nowPlaying ;
-     async function nowPlaying(){ 
-        var Response =await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c")
-         var nowPlaying = await Response.json();
-         
-    
-         for (let i = 0; i < 18; i++) {
-    
-                
-     $("#NowPlayingContainer").append(`
-     </div>
-     <div class="card">
-         <div class="poster">
-             <img src="https://image.tmdb.org/t/p/w500${nowPlaying.results[i].poster_path}" alt="">
-            
-         </div>
-         <div class="details">
-         <i class="${(selctedMovies.includes(nowPlaying.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite"
-         id="favorite" 
-         
-         onclick= "toggleFav(${nowPlaying.results[i].id},this)" ></i> 
-             <h2>${nowPlaying.results[i].title} </h2>
-             <p> ${nowPlaying.results[i].release_date} </p>
-             <p id="rating"> ${nowPlaying.results[i].vote_average}</p>
-             <div id="tags"> <span>Action</span> <span>Drama</span> </div>
-         </div>
-    
-     </div>`);
-         }
-    
-    
-      
-     }
+  
      
 
 
