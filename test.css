@@ -200,7 +200,7 @@ nav{
  position: relative;
 }
 
-#cardContainer ,#mostPoupler ,#SearchContainer{
+#cardContainer ,#mostPoupler ,#SearchContainer,#NowPlayingContainer{
     
     margin-right: 40px;
     margin-left: 40px;

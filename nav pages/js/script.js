@@ -6,7 +6,8 @@
 var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
 var  selctedMovies = [];
 
-
+var allmovies = topRated+nowPlaying;
+alert(allmovies);
 
 $.each(arr, function(i, el){
 if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
@@ -151,15 +152,14 @@ var index = selctedMovies.indexOf(id);
 function getFavorite(){
 // console.log(arr);
 // let items = (JSON.parse(localStorage.getItem("favoriteList")));
-
-
 // console.log(items);
 console.log(selctedMovies.length);
 for (let i = 0; i < selctedMovies.length; i++) {
 //    console.log(topRated.results[i].find(arr[i]));
 
 let obj = topRated.results.find( o => o.id === selctedMovies[i]);
-console.log("ok");
+console.log(obj);
+
 
         var favoritecard = `<div class="card" onclick="getTheMovie(this)">
 <div class="poster">
@@ -179,7 +179,12 @@ console.log("ok");
 
 </div>` ;
 $("#favoriteContainer").append(favoritecard);
+
+    
     }
+
+
+
 }
 
 
@@ -311,8 +316,40 @@ async function getpopular() {
     };
 
 
-
-
+        var nowPlaying ;
+     async function nowPlaying(){ 
+        var Response =await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c")
+         var nowPlaying = await Response.json();
+         
+    
+         for (let i = 0; i < 18; i++) {
+    
+                
+     $("#NowPlayingContainer").append(`
+     </div>
+     <div class="card">
+         <div class="poster">
+             <img src="https://image.tmdb.org/t/p/w500${nowPlaying.results[i].poster_path}" alt="">
+            
+         </div>
+         <div class="details">
+         <i class="${(selctedMovies.includes(nowPlaying.results[i].id))?"fa-solid" :"fa-regular"} fa-heart favorite"
+         id="favorite" 
+         
+         onclick= "toggleFav(${nowPlaying.results[i].id},this)" ></i> 
+             <h2>${nowPlaying.results[i].title} </h2>
+             <p> ${nowPlaying.results[i].release_date} </p>
+             <p id="rating"> ${nowPlaying.results[i].vote_average}</p>
+             <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+         </div>
+    
+     </div>`);
+         }
+    
+    
+      
+     }
+     
 
 
 // var isSelected = false;
