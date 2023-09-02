@@ -148,7 +148,7 @@ var index = selctedMovies.indexOf(id);
 }
 
 
-
+ 
  function getTopRatedFavorite(){
 // console.log(arr);
 // let items = (JSON.parse(localStorage.getItem("favoriteList")));
