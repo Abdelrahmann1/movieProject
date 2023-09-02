@@ -1,4 +1,29 @@
-let btn2 =document.getElementById("btn2");
+var genersList = {
+    18:"action",
+    12:"Adventure",
+    16:"Animation",
+    35:"Comedy",
+    80:"Crime",
+    14:"Fantasy",
+    99:"Documentary",
+    18 :"Drama",
+    10751:"Family",
+    36:"History",
+     27 :"Horror", 
+     10402: "Music",
+     9648:"Mystery",
+     10749:"Romance",
+     878:"Science Fiction",
+     10770:"TV Movie",
+     53:"Thriller",
+     10752:"War",
+     37:"Western",
+}
+function getFirstGener(i,x) {  
+    return genersList[topRated.results[i].genre_ids[x]];
+    }
+
+let btn2 = document.getElementById("btn2");
 window.onscroll=function(){
     if(scrollY>=532.55810546875){
         btn2.style.display="block";
@@ -39,7 +64,7 @@ var x;
         <h2> ${x.results[i].title}  </h2>
         <p>${x.results[i].release_date}  </p>
         <p id="rating">${x.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <div id="tags"> <span>${getFirstGener(i,0)}</span> <span>Drama</span> </div>
     </div>
     
     </div>` ;
@@ -135,8 +160,8 @@ var x;
      <i class="fa-regular fa-heart" id="favorite" ></i> 
         <h2> ${topRated.results[i].title} </h2>
         <p>${topRated.results[i].release_date}  </p>
-        <p id="rating">${topRated.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <p id="rating">${Number(topRated.results[i].vote_average).toFixed(1)}</p>
+        <div id="tags"> <span>${getFirstGener(i,0)}</span> <span>${getFirstGener(i,1)}</span> </div>
     </div>
     
     </div>` ;
@@ -167,8 +192,8 @@ var x;
      <i class="fa-regular fa-heart" id="favorite" ></i> 
         <h2> ${topRated.results[i].title} </h2>
         <p>${topRated.results[i].release_date}  </p>
-        <p id="rating">${topRated.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <p id="rating">${Number(topRated.results[i].vote_average).toFixed(1)}</p>
+        <div id="tags"> <span>${getFirstGener(i,0)}</span></div>
     </div>
     
     </div>` ;
@@ -199,19 +224,19 @@ var x;
         onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
             <h2> ${nowPlaying.results[i].title} </h2>
             <p>${nowPlaying.results[i].release_date}  </p>
-            <p id="rating">${nowPlaying.results[i].vote_average}</p>
-            <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+            <p id="rating">${Number(topRated.results[i].vote_average).toFixed(1)}</p>
+            <div id="tags"> <span>${getFirstGener(i,0)}</span> <span>Drama</span> </div>
         </div>
         
         </div>` ;
             $(".cards4").append(card);
-            
+        }
             
         }
 
 
 
-})();
+)();
         
 
 function getTicket(title) {

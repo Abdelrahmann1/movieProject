@@ -68,7 +68,7 @@ id="favorite"
 
 onclick= "toggleFav(${topRated.results[i].id},this)" ></i> 
 
-<button onclick="takeTheMovie(this)"> take it </button>
+
 
 
 <h2> ${topRated.results[i].title}  </h2>
@@ -121,7 +121,6 @@ else if(elem.classList.contains("fa-solid")){
 
 function addToFavorite(id,elem) {
 
-
 selctedMovies.push(id);
 localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
 $(elem).addClass("fa-solid fa-heart");
@@ -159,8 +158,8 @@ console.log(selctedMovies.length);
 for (let i = 0; i < selctedMovies.length; i++) {
 //    console.log(topRated.results[i].find(arr[i]));
 
-let obj =  topRated.results.find( o => o.id === selctedMovies[i]);
-console.log(obj);
+let obj = topRated.results.find( o => o.id === selctedMovies[i]);
+console.log("ok");
 
         var favoritecard = `<div class="card" onclick="getTheMovie(this)">
 <div class="poster">
@@ -171,7 +170,7 @@ console.log(obj);
 <i class="fa-solid fa-heart" id="favorite" onclick="removeFromFavorite(${obj.id}, this)"></i> 
 <h2> ${obj.title}  </h2>
 <p>${obj.release_date}  </p>
-<p id="rating">${Number( obj.vote_average).toFixed(1)}</p>
+<p id="rating">${Number(obj.vote_average).toFixed(1)}</p>
 
 <div id="tags"> <span id="firstgener">${genersList[obj.genre_ids[0]]}</span> 
  </div>
