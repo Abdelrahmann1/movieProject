@@ -8,6 +8,8 @@ var  selctedMovies = [];
 
 
 
+
+
 $.each(arr, function(i, el){
 if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
 });
@@ -148,7 +150,7 @@ var index = selctedMovies.indexOf(id);
 
 
 
-function getFavorite(){
+function getTopRatedFavorite(){
 // console.log(arr);
 // let items = (JSON.parse(localStorage.getItem("favoriteList")));
 // console.log(items);
