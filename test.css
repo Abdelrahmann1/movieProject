@@ -231,8 +231,10 @@ nav{
 #faUp{
     font-size: 20px;
     margin-left: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-top: 0px;
+    vertical-align: middle;
+    
 }
 
 #faSearch:hover,#faLogin:hover,#faUp:hover{
@@ -245,6 +247,14 @@ nav{
     color: #009ad8;
 }
 
+#faUp:hover{
+    font-size: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    vertical-align: middle;
+    color: #009ad8;
+}
 
 .card2{
     background-color: aqua;
