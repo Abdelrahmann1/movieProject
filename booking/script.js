@@ -13,6 +13,8 @@ function updateSelectedCount() {
     total.innerText = selectedSeatsCount * ticketPrice;
 }
 //Seat click event
+
+
 container.addEventListener('click', e => {
   if (e.target.classList.contains('seat') &&
      !e.target.classList.contains('occupied')) {
@@ -47,17 +49,11 @@ const movieName =  new URLSearchParams(window.location.search).get('movieNameStr
 })();
 
 
-
-
-
-
+// A $( document ).ready() block.
 
 
 var xhttp = new XMLHttpRequest();
-var fname = document.getElementById("fname");
 var usersList = document.getElementById("usersList");
-var lname = document.getElementById("lname");
-var uAvatar = document.getElementById("uAvatar");
 
     xhttp.onreadystatechange=function(){
         if(this.readyState==4 && this.status==200)
@@ -65,7 +61,7 @@ var uAvatar = document.getElementById("uAvatar");
             var dataAfterConverted= JSON.parse(this.responseText)
             console.log(dataAfterConverted['data']);
             
-            fname.value = dataAfterConverted['data'].at(uId).first_name;
+            // fname.value = dataAfterConverted['data'].at(uId).first_name;
 
             for (var i = 0; i < dataAfterConverted['data'].length; i++) {
                 usersList.innerHTML+=
