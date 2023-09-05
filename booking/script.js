@@ -4,92 +4,104 @@ var count = document.getElementById('count');
 var total = document.getElementById('total');
 var movieSelect = document.getElementById('movie');
 
+var t_name = document.getElementById("t_name");
+var t_seats = document.getElementById("t_seats");
+
 let ticketPrice = 200;
 //Update total and count
 function updateSelectedCount() {
     var selectedSeats = document.querySelectorAll('.row .seat.selected');
     var selectedSeatsCount = selectedSeats.length;
-  count.innerText = selectedSeatsCount;
+    count.innerText = selectedSeatsCount;
     total.innerText = selectedSeatsCount * ticketPrice;
+
+    
 }
 //Seat click event
-
 
 container.addEventListener('click', e => {
   if (e.target.classList.contains('seat') &&
      !e.target.classList.contains('occupied')) {
-    e.target.classList.toggle('selected');
+      e.target.classList.toggle('selected');
+
+      if (e.target.classList.contains('selected')) {
+        // t_seats.innerText += `${e.target.title} , `;
+      }
+      else {
+        // t_seats.innerText -= e.target.title;
+      }
   }
   updateSelectedCount();
 });
 
-
 ////////////////? Confirm Seats ////////////////////
 
-var selectedSeats =[];
+let  movieSelectedSeats =[] ;
 var selctedSC = parseInt(count.innerText);
 function confirmSeats() {
-    for (var i = 0; i <= seats.length; i++){
+    for (var i = 0; i < seats.length; i++){
         if (seats[i].classList.contains('selected')) {
-         selectedSeats.push(seats[i].title);
+             movieSelectedSeats.push(seats[i].title);
+            localStorage.setItem(`${currentMovie}`, JSON.stringify( movieSelectedSeats));
         }
         else {
             // seats.splice(seats[i], 1);
         }
-      console.log(selectedSeats);
+      console.log( movieSelectedSeats);
     }
-    // console.log(selectedSeats);
-  alert(`You have reserved  ${seats} seats`);
+    console.log("passed");
+
+    t_seats.innerText = movieSelectedSeats;
+    setTimeout(function () {
+        alert("Have a nice day!");
+    }, 500);
 }
 
-// ? Booking //
-const movieName =  new URLSearchParams(window.location.search).get('movieNameString');
-(function () {
-    document.getElementById('movieName').innerHTML += movieName ;
-})();
+//////////////////////////// ? Booking ////////////////////////////
+var nowPlaying;
+var movieList = document.getElementById("movieList");
+var currentMovie;
+(async function getPlayingNow() {
+    var data = await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
+    nowPlaying = await data.json();
 
-
-// A $( document ).ready() block.
-
-
-var xhttp = new XMLHttpRequest();
-var usersList = document.getElementById("usersList");
-
-    xhttp.onreadystatechange=function(){
-        if(this.readyState==4 && this.status==200)
-        {
-            var dataAfterConverted= JSON.parse(this.responseText)
-            console.log(dataAfterConverted['data']);
-            
-            // fname.value = dataAfterConverted['data'].at(uId).first_name;
-
-            for (var i = 0; i < dataAfterConverted['data'].length; i++) {
-                usersList.innerHTML+=
+    for (let i = 0; i < 11; i++) {
+        movieList.innerHTML+=
                 `<option value=${i}>
-            ${dataAfterConverted['data'].at(i).first_name}
+            ${nowPlaying.results[i].title}
             </option>
             `;
+    }
+        
+})();
+
+function getSelectedMovie(selectedMovie) {
+    currentMovie = selectedMovie;
+    t_name.innerText = currentMovie;
+    //* CLEAR PREVIOUS MOVIE SEATS //
+    for (var i = 0; i < seats.length; i++){
+ 
+            if (seats[i].classList.contains("occupied")) {
+                seats[i].classList.remove("occupied");
+                console.log("catch a match");
             }
-            // usersList.addEventListener("change", function () {
-                    
-            // });
+        
+    }
+
+    //? read reserved seats //
+
+    var occupied = (JSON.parse(localStorage.getItem(`${currentMovie}`)));
+    console.log("occupied " + occupied);
+    for (var i = 0; i < seats.length; i++){
+        
+        for (var j = 0; j < occupied.length; j++) {
+            if (seats[i].title === occupied[j]) {
+                seats[i].classList.add("occupied");
+                console.log("catch a match");
+            }
         }
     }
-    xhttp.open("GET","https://reqres.in/api/users/",true);
-    xhttp.send();
+    
+    
 
-function getSelectedUser(selectedUser) {
-
-    console.log(selectedUser);
-    xhttp.onreadystatechange=function(){
-        if(this.readyState==4 && this.status==200)
-        {
-            var dataAfterConverted= JSON.parse(this.responseText)
-            uAvatar.src = dataAfterConverted['data'].at(selectedUser).avatar;
-            fname.value = dataAfterConverted['data'].at(selectedUser).first_name;
-            lname.value = dataAfterConverted['data'].at(selectedUser).last_name;
-        }
-    }
-    xhttp.open("GET","https://reqres.in/api/users/",true);
-    xhttp.send();
-    }
+}
