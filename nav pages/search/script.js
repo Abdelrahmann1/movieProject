@@ -36,6 +36,7 @@ async function getSearch() {
     //   console.log(input.value);
       var mydata ;
     var data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${input.value}&include_adult=false&language=en-US&page=1`, options);
+    
         mydata = await data.json();
         console.log(mydata);
 
