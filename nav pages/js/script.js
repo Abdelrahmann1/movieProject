@@ -399,3 +399,21 @@ async function getpopular() {
 
 
 // var isSelected = false;
+
+
+
+//? nav current page //
+
+var links = document.querySelectorAll('#menu a');
+
+// Add a click event listener to each <a> element
+links.forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    // Remove the "active" class from all <a> elements
+    links.forEach(function(otherLink) {
+      otherLink.classList.remove('active');
+    });
+    // Add the "active" class to the clicked <a> element
+    link.classList.add('active');
+  });
+});

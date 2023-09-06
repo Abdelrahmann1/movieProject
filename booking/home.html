@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body >
     
     <form action="booking.html" method="get">
         <input type="text" name="movieNameString" id="movieNameString" placeholder="“Enter your user name here”"><br><br>
         <input type="submit" value="Book Now!">
     </form>
 
-    <script src="script.js"></script>
+    <h3>Playing Now</h3>
+    <select value="" id="usersList" onchange="getSelectedUser(this.options[this.selectedIndex].value)">
+    
+    </select>
+
+
+    <script src="booking.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>

@@ -38,7 +38,7 @@ body{
 }
 
 .nav-item .active {
-   /* color: green; */
+   color: #009ad8 !important;
 }
 .navbar-toggler{
     border: 1px solid transparent;
