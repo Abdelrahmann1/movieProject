@@ -78,7 +78,7 @@ body{
 }
 .card {
     margin: 15px;
-    /* animation: mymove  ease-in-out 2.5s; */
+    animation: mymove  ease-in-out 1.5s;
     float: left;
     overflow: hidden;
     /* margin: 10px; */
@@ -89,7 +89,7 @@ body{
     border-radius: 10px;
     /* box-shadow: 0 5px 5px gray 0.9; */
 }
-/* @keyframes mymove {
+@keyframes mymove {
     0% {
      transform: translateX(2000px);
      opacity: 0;
@@ -98,7 +98,7 @@ body{
      transform: translateX(0);
      opacity: 1;
    }
- } */
+ }
 
 
 .card .poster{
