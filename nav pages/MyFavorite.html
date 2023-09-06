@@ -42,15 +42,21 @@
             <a class="nav-link" href="../nav pages\MyFavorite.html" style="color: azure;">Favorite</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: azure;">Games</a>
+            <a class="nav-link" href="../GamePage\indexGames.html" style="color: azure;">Games</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../feedback\feedback.html" style="color: azure;">Contact Us</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" role="search" action="../../nav pages/search/search.html">
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" name="searchValue" aria-label="Search" id="search" value="Bilal"> -->
+          
+          <button class="btn btn-outline-success" type="submit" onclick="loadingData()" >Search</button>
+
+       </button> 
+       
+         <i class="fa-solid fa-magnifying-glass" id="faSearch"></i>
+          <i class="fa-solid fa-right-to-bracket" id="faLogin"></i>
         </form>
       </div>
     </div>

@@ -5,6 +5,11 @@
 
 var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
 var  selctedMovies = [];
+
+
+
+
+
 $.each(arr, function(i, el){
 if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
 });
@@ -49,7 +54,6 @@ var topRated;
 var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
 topRated = await data.json();
 
-    topRated.results
 
 for (let i = 0; i < 18; i++) {
 
@@ -95,10 +99,10 @@ $("#cardContainer").append(card);
    playingNow = await Response.json();
     
     
-
+$("#first-carousal").append(`<img src="https://image.tmdb.org/t/p/w500${playingNow.results[0].poster_path}" class="d-block w-100" alt="...">`)   
     for (let i = 0; i < 18; i++) {
 
-           
+        
 $("#NowPlayingContainer").append(`
 </div>
 <div class="card">
@@ -184,12 +188,9 @@ var index = selctedMovies.indexOf(id);
 function getFavorite() {
     getTopRatedFavorite();
     getNowPlayingFavorite();
-   
-
-
 }
 
-function getTopRatedFavorite(){
+ function getTopRatedFavorite(){
 // console.log(arr);
 // let items = (JSON.parse(localStorage.getItem("favoriteList")));
 // console.log(items);
@@ -394,9 +395,7 @@ async function getpopular() {
     
     };
 
-
   
-     
 
 
 // var isSelected = false;
