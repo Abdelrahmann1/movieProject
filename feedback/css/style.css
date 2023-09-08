@@ -129,3 +129,7 @@ input[type="submit"]:hover {
 #star4{
     padding-top: 25px;
 }
+
+.fa-regular, .fa-solid{
+  position: static !important;
+}
