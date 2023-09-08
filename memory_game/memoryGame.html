@@ -8,10 +8,29 @@
 </head>
 <body>
   <header class="deader">
-    <div class="userInfo" id="name"></div>
-    <div class="userInfo" id="email"></div>
+    <div class="elementDicretion">
+      
+      <div > Name :</div>
+      <div  id="name"></div>
+    </div>
+    <div class="elementDicretion">
+      <p class="time-txt">Time  </p>
+      <label id="minutes">00</label>:<label id="seconds">00</label>
+      
+    </div>
+    <div class="elementDicretion">
+      <div  >Score :</div>
+      <div id="scoreTime" >0</div>
+
+    </div>
+ 
+ 
+
+
 
   </header>
+
+
  
   <main>
     <div class="game-container">
@@ -81,6 +100,7 @@
   <div class="popup" id="popup">
     <h2 id="responseTitle"></h2>
     <p id="response"></p>
+    <button type="button" onclick="reloadPage()">play again?  </button>
     <button type="button" onclick="closePopUp()">ok  </button>
   </div>
   <script src="memory_game.js"></script>

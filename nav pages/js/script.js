@@ -371,3 +371,21 @@ links.forEach(function(link) {
     link.classList.add('active');
   });
 });
+
+
+
+
+if(localStorage.getItem("userName")){
+    var elems=localStorage.getItem("userName");
+    var logedInfo = document.getElementsByClassName("loged");
+    var theuser =  document.getElementById("username");
+    theuser.innerText = elems
+    for (var i=0;i<logedInfo.length;i+=1){
+        logedInfo[i].style.display = 'flex';
+      }
+}else{
+    var notlogedInfo = document.getElementsByClassName("notLoged");
+    for (var i=0;i<notlogedInfo.length;i+=1){
+        notlogedInfo[i].style.display = 'block';
+      }
+}

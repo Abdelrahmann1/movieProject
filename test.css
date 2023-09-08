@@ -304,4 +304,12 @@ nav{
     font-size: 30px;
     color: white;
 }
- 
+.notLoged,.loged{
+    display: none ;
+    color: white;
+}
+#username{
+    display: flex;
+    margin: 0 !important;
+    padding:0 5px 0 5px;
+}
