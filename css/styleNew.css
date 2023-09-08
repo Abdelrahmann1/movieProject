@@ -120,22 +120,15 @@
     }
   }
 
-  .fa-square-x-twitter{
+  .fa-square-x-twitter , .fa-linkedin , .fa-square-github{
     font-size: 30px;
-    color: #1D9BF0;
   }
-
-  .fa-linkedin{
-    font-size: 30px;
-    color: #2A4779;
+  .fa-linkedin:hover{
+    color: #0a66c2;
   }
-
-
-  .fa-github{
-    font-size: 30px;
-    color: gray;
+  .fa-square-x-twitter:hover{
+       color: #1D9BF0;
   } 
-
 
   #btn {
     font-size: 40px;
@@ -150,5 +143,4 @@
     display:none;
     padding: 0;
     margin: 0;
-
-}  
+}

@@ -105,27 +105,27 @@ function getRandomInt(max) {
    $("#second-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[5].poster_path}" class="d-block w-100" " alt="...">`)  
    $("#second-carousal").append(`<div class="carousel-caption">
    <p class="h1 text-light shadow shadow-lg " style="text-shadow: 4px 4px black;" > ${playingNow.results[5].title} </p>
-   <button type="button" class="btn btn-danger btn-lg btn-block  my-5">Take the Movie Now $200</button>
+   <button type="button" class="btn btn-danger btn-lg btn-block  my-5"> Get Tickets Now </button>
    <!-- <button type="button" class="btn btn-danger my-5 btn-lg">Large button</button> -->
-   <p class="bg-black p-2">${playingNow.results[5].overview} </p>
+   <p class="bg-black bg-opacity-75 rounded p-2">${playingNow.results[5].overview} </p>
    </div>`)  
 
    $("#third-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[7].poster_path}" class="d-block w-100"  alt="..."> `)  
    $("#third-carousal").append(`<div class="carousel-caption">
 <p class="h1 text-light shadow shadow-lg " style="text-shadow: 4px 4px black;" > ${playingNow.results[7].title} </p>
 
-<button type="button" class="btn btn-lg  btn-block btn-danger my-5" >Take the Movie Now $200</button>
+<button type="button" class="btn btn-lg  btn-block btn-danger my-5" > Get Tickets Now </button>
 
 <!-- <button type="button" class="btn btn-danger my-5 btn-lg" style = "color:red">Large button</button> -->
-<p class="bg-black p-2">${playingNow.results[7].overview} </p>
+<p class="bg-black bg-opacity-75 rounded p-2">${playingNow.results[7].overview} </p>
 </div>`)   
 
 $("#first-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[3].poster_path}" class="d-block w-100"  alt="...">`)   
 $("#first-carousal").append(`<div class="carousel-caption">
 <p class="h1 text-light shadow shadow-lg " style="text-shadow: 4px 4px black  ;" > ${playingNow.results[3].title} </p>
-<button type="button" class="btn btn-danger btn-lg btn-block  my-5">Take the Movie Now $200</button>
+<button type="button" class="btn btn-danger btn-lg btn-block  my-5"> Get Tickets Now </button>
 <!-- <button type="button" class="btn btn-danger my-5 btn-lg">Large button</button> -->
-<p class="bg-black  p-2">${playingNow.results[3].overview} </p>
+<p class="bg-black bg-opacity-75 rounded p-2">${playingNow.results[3].overview} </p>
 </div>`)   
     for (let i = 0; i < 18; i++) {
 
