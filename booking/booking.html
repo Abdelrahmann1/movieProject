@@ -6,20 +6,14 @@
     <title>Seats Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="getTopRatedFavorite()">
 
     <div class="movie-container">
-        <!-- <label>Pick a movie: </label> -->
-        <!-- <select id="movie">
-          <option value="250">Interstellar (Rs. 250)</option>
-          <option value="200">Kabir Singh (Rs. 200)</option>
-          <option value="150">Duniyadari (Rs. 150)</option>
-          <option value="100">Natsamrat (Rs. 100)</option>
-        </select> -->
-        <h4 id="movieName">Choose your seats for :</h4>
-        
+        <label>Pick a movie </label>
+        <select id="movieList" onchange="getSelectedMovie(this.options[this.selectedIndex].text)">
 
-        
+        </select>
+
         <div class="container">
           <div class="screen">Screen</div>
           
@@ -45,8 +39,8 @@
               <div class="seat" title="B-1"></div>
               <div class="seat" title="B-2"></div>
               <div class="seat" title="B-3"></div>
-              <div class="seat occupied" title="B-4"></div>
-              <div class="seat occupied" title="B-5"></div>
+              <div class="seat  " title="B-4"></div>
+              <div class="seat  " title="B-5"></div>
               <div class="seat" title="B-6"></div>
               <div class="seat" title="B-7"></div>
               <div class="seat" title="B-8"></div>
@@ -66,8 +60,8 @@
               <div class="seat"title="C-4"></div>
               <div class="seat"title="C-5"></div>
               <div class="seat"title="C-6"></div>
-              <div class="seat occupied" title="C-7"></div>
-              <div class="seat occupied" title="C-8"></div>
+              <div class="seat  " title="C-7"></div>
+              <div class="seat  " title="C-8"></div>
               <div class="seat" title="C-9"></div>
               <div class="seat" title="C-10"></div>
               <div class="seat" title="C-11"></div>
@@ -104,8 +98,8 @@
               <div class="seat" title="E-1"></div>
               <div class="seat" title="E-2"></div>
               <div class="seat" title="E-3"></div>
-              <div class="seat occupied" title="E-4"></div>
-              <div class="seat occupied" title="E-5"></div>
+              <div class="seat  " title="E-4"></div>
+              <div class="seat  " title="E-5"></div>
               <div class="seat" title="E-6"></div>
               <div class="seat" title="E-7"></div>
               <div class="seat" title="E-8"></div>
@@ -127,21 +121,21 @@
               <div class="seat" title="F-2"></div>
               <div class="seat" title="F-3"></div>
               <div class="seat" title="F-4"></div>
-              <div class="seat occupied" title="E-5"></div>
-              <div class="seat occupied" title="E-6"></div>
-              <div class="seat occupied" title="E-7"></div>
-              <div class="seat" title="E-8"></div>
-              <div class="seat" title="E-9"></div>
-              <div class="seat" title="E-10"></div>
-              <div class="seat" title="E-11"></div>
-              <div class="seat" title="E-12"></div>
-              <div class="seat" title="E-13"></div>
-              <div class="seat" title="E-14"></div>
-              <div class="seat" title="E-15"></div>
-              <div class="seat" title="E-16"></div>
-              <div class="seat" title="E-17"></div>
-              <div class="seat" title="E-18"></div>
-              <div class="seat" title="E-19"></div>
+              <div class="seat  occupied" title="F-5"></div>
+              <div class="seat  occupied" title="F-6"></div>
+              <div class="seat  occupied" title="F-7"></div>
+              <div class="seat" title="F-8"></div>
+              <div class="seat" title="F-9"></div>
+              <div class="seat" title="F-10"></div>
+              <div class="seat" title="F-11"></div>
+              <div class="seat" title="F-12"></div>
+              <div class="seat" title="F-13"></div>
+              <div class="seat" title="F-14"></div>
+              <div class="seat" title="F-15"></div>
+              <div class="seat" title="F-16"></div>
+              <div class="seat" title="F-17"></div>
+              <div class="seat" title="F-18"></div>
+              <div class="seat" title="F-19"></div>
             </div>
           
           <p class="text">
@@ -162,18 +156,40 @@
               <small>Occupied</small>
             </li>    
           </ul>
-
-          <div class="button_holder">
-            <button  
-            onclick="confirmSeats()"
-            id="buConfirm">Confirm Seats</button>
-        </div>
-
       </div>
 
+      <br><br>
+
+      <div class="ticket">
+        <div class="left">
+          <div class="title">
+            <!-- <span class="first-letter">V</span> -->
+            <span >Movie : </span><span id="t_name"></span> <br> <br>
+            <span >Seats : </span><span id="t_seats"></span>
+          </div>
+          <div class="date">
+            <p>5th November.</p>
+          </div>
+          <img src="../assets/images/sp2.png" >
+        </div>
+        <div class="right">
+          <div class="barcode"></div>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="button_holder">
+        <button  
+        onclick="confirmSeats()"
+        id="buConfirm">Confirm Seats</button>
+    </div>
+
+    <br><br>
 
       
-    
+    <script src="booking.js"></script>
     <script src="script.js"></script>
+    <script src="../nav pages/js/script.js"></script>
 </body>
 </html>

@@ -19,6 +19,11 @@ body {
   box-sizing: border-box;
 }
 
+.movieList , #buConfirm:focus {
+  border: 0px !important;
+  outline: 0 !important;
+}
+
 .movie-container {
   margin: 20px 0px;
   display: flex;
@@ -162,4 +167,136 @@ p.text span {
 .button_holder{
   text-align: center;
   margin-left: -70px;
+}
+
+/* ? Ticket */
+/* @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One|Butcherman|Montserrat:900"); */
+
+:root {
+  --red: #242333;
+  --gray: #e9e9e9;
+}
+
+.ticket {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-height: 200px;
+  min-width: 40%;
+  margin: 10px;
+  background: black;
+}
+
+
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #242333;
+  border-radius: 50%;
+  top: 80px;
+}
+
+.ticket::before {
+  left: -15px;
+}
+
+.ticket::after {
+  right: -15px;
+}
+
+.left {
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  /* display: flex; */
+  align-items: center;
+  top: 30px;
+  left: 35px;
+  font-family: "Alfa Slab One", cursive;
+  font-size: 22px;
+  color: var(--red);
+}
+
+.first-letter {
+  font-family: "Butcherman", cursive;
+  font-size: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ticket {
+    min-width: 90%;
+  }
+  .title {
+    font-size: 15px;
+  }
+
+}
+@media only screen and (max-width: 900px) {
+  .ticket {
+    min-width: 70%;
+  }
+  .title {
+    font-size: 15px;
+  }
+}
+
+#t_name,#t_seats{
+  color: white;
+}
+
+.date {
+  position: absolute;
+  top: 130px;
+  left: 198px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--gray);
+}
+
+img {
+  position: absolute;
+  height: 180px;
+  top: 10px;
+  right: 30px;
+  animation: imageFilter 5s alternate 2;
+}
+
+@keyframes imageFilter {
+  to {
+    filter: invert(100%);
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  border-left: 3px dashed #373435;
+}
+
+.barcode {
+  height: 45px;
+  width: 120px;
+  transform: rotate(90deg);
+  background: repeating-linear-gradient(
+    0.25turn,
+    black 0,
+    black 5px,
+    var(--gray) 5px,
+    var(--gray) 6px,
+    black 6px,
+    black 8px,
+    var(--gray) 8px,
+    var(--gray) 10px,
+    black 10px,
+    black 20px,
+    var(--gray) 20px,
+    var(--gray) 25px,
+    black 25px,
+    black 26px
+  );
 }
