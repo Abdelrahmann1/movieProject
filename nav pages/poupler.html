@@ -3,62 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Most popular</title>
+    <title>Popular Now</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logo.png">
     <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/style2Bilal.css">
+    <link rel="stylesheet" href="../css/styleNew.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../test.css">
-    
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
 </head>
+
 <body onload="getpopular()">
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary" >
     <div class="container-fluid"  style="background-color: #070617;">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon" style="color: #000;background-image: url('');">
+        <i class="fas fa-bars " ></i>
+        </span>
       </button>
-      <a class="navbar-brand" href="../index.html" style="color: red;"  >My Cinema</a>
+      <a class="navbar-brand" href="../index.html" style="color: red;"  >Home</a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03" >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="menu">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../nav pages/playingNow.html">Now Playing</a>
+            <a class="nav-link" aria-current="page" href="../nav pages/playingNow.html">Now Playing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../nav pages/TopRated.html" >Top Rated</a>
+            <a class="nav-link " href="../nav pages/TopRated.html" >Top Rated</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  active" href="../nav pages/poupler.html" >Popular</a>
+            <a class="nav-link active" href="../nav pages/poupler.html" >Popular</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../nav pages\MyFavorite.html" >Favorite</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../GamePage/indexGames.html" >Games</a>
+            <a class="nav-link" href="../GamePage\indexGames.html">Games</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../feedback\feedback.html" >Contact Us</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../booking/booking.html">GetTickets</a>
+          </li>
+          
         </ul>
-        <form class="d-flex" role="search" action="../../nav pages/search/search.html">
-          <!-- <input class="form-control me-2" type="search" placeholder="Search" name="searchValue" aria-label="Search" id="search" value="Bilal"> -->
+        <form class="d-flex" role="search" action="../nav pages/search/search.html">
+
           
           <button class="btn btn-outline-success" type="submit" onclick="loadingData()" >Search</button>
 
        </button> 
-       
-         <i class="fa-solid fa-magnifying-glass" id="faSearch"></i>
-          <i class="fa-solid fa-right-to-bracket" id="faLogin"></i>
+
         </form>
+        <div class="loged">
+          <p id="username"></p>
+        </div>
+        <div class="notLoged">
+          <a href="authentication/login/login.html">
+            <button class="btn btn-outline-success" type="submit" >Login</button>
+          </a>
+          <a href="authentication/register/register.html">
+            <button class="btn btn-outline-success" type="submit"  >Register</button>
+          </a>
+
+        </div>
+       
+          
       </div>
     </div>
+   
   </nav>
+
+
 <div id="mostPoupler">
 </div>
 
     </main>
-    <script src="../feedback\js\jquery.min.js"></script>
-    <script src="../feedback\js\jquery.min.js"></script>
-    <script src="bootstrap-5.2.3-dist/js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js"></script>
-    <script src="bootstrap-5.2.3-dist/js/bootstrap.js"></script>
+
+    <div class="footer">
+      <div class="contain">
+      <div class="col">
+        <h1>Organization</h1>
+        <ul>
+          <li onclick="window.location.href='../aboutus/aboutus.html'    ">About</li>
+          <li onclick="window.location.href='../not_found/notfound.html'  ">Terms & Conditions</li>
+          <li onclick="window.location.href='../not_found/notfound.html' ">FAQs</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h1>Services</h1>
+        <ul>
+          <li onclick="window.location.href='../feedback/feedback.html' ">Contact Us</li>
+          <li onclick="window.location.href='../booking/booking.html' ">Get Tickets</li>
+          <li onclick="window.location.href='../GamePage/indexGames.html' ">Entertainment</li>
+        </ul>
+      </div>
+      <div class="col" style="margin-top: 30px;">
+        <img src="../assets/images/footer icons/dolbygold.png" alt="" width="150px" >
+      </div>
+      <div class="col" style="margin-top: 30px;">
+        <img src="../assets/images/footer icons/IMAX.png" alt="" width="150px">
+      </div>
+      <div class="col" style="margin-top: 30px;">
+        <img src="../assets/images/footer icons/pngegg (5).png" alt="" width="150px">
+      </div>
+      <div class="col social">
+        <h1>Social</h1>
+        <ul>
+         <li onclick="window.location.href='../not_found/notfound.html'">  <i class="fa-brands fa-square-x-twitter"></i></li>
+         <li onclick="window.location.href='../not_found/notfound.html'">    <i class="fa-brands fa-linkedin"></i> </li>
+         <li onclick="window.location.href='../not_found/notfound.html'">  <i class="fa-brands fa-square-github"></i> </li>
+        </ul>
+      </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+
+    <script src="../bootstrap-5.2.3-dist/js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.js"></script>
     <script src="js/script.js"></script>
     <script src="nav pages\js\script.js"></script>
     <script src="getpoupler.js"></script>

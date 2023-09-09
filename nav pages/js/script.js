@@ -1,14 +1,5 @@
-//     var Seasons = {
-//         "18":'Action',
-//         "12":'Animation',
-// }
-
 var arr =  (JSON.parse(localStorage.getItem("favoriteList")));
 var  selctedMovies = [];
-
-
-
-
 
 $.each(arr, function(i, el){
 if($.inArray(el, selctedMovies) === -1) selctedMovies.push(el);
@@ -34,14 +25,11 @@ var genersList = {
      53:"Thriller",
      10752:"War",
      37:"Western",
-
 }
 
-//    alert(topRated.results[0].genre_ids[0])
-// 
 
-function getFirstGener(i,x) {  
-return genersList[topRated.results[i].genre_ids[x]];
+function getFirstGener(i,x,list) {  
+return genersList[list.results[i].genre_ids[x]];
 }
 
 function getFavoriteGener(i,x) {  
@@ -55,7 +43,7 @@ var data = await fetch("http://api.themoviedb.org/3/movie/top_rated?api_key=24ce
 topRated = await data.json();
 
 
-for (let i = 0; i < 18; i++) {
+for (let i = 0; i < 20; i++) {
 
 // console.log(allGener(i));
 var card = `<div class="card" onclick = "getTheMovie(this)">
@@ -76,8 +64,10 @@ onclick= "toggleFav(${topRated.results[i].id},this)" ></i>
 <p>${topRated.results[i].release_date}  </p>
 <p id="rating">${ Number(topRated.results[i].vote_average).toFixed(1)}</p>
 
-<div id="tags"> <span id="firstgener">${getFirstGener(i,0)}</span> 
- </div>
+<div id="tags">
+        ${getFirstGener(i, 0, topRated) !== undefined ? ` <span>${getFirstGener(i, 0, topRated)}</span>` : ""} 
+        ${getFirstGener(i, 1, topRated) !== undefined ?` <span>${getFirstGener(i, 1, topRated)}</span>` : ""} 
+    </div>
 
 </div>
 
@@ -100,34 +90,34 @@ function getRandomInt(max) {
 (async function nowPlaying(){ 
    var Response =await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c")
    playingNow = await Response.json();
-    
+   
    
    $("#second-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[5].poster_path}" class="d-block w-100" " alt="...">`)  
    $("#second-carousal").append(`<div class="carousel-caption">
    <p class="h1 text-light shadow shadow-lg " style="text-shadow: 4px 4px black;" > ${playingNow.results[5].title} </p>
-   <button type="button" class="btn btn-danger btn-lg btn-block  my-5">Take the Movie Now $200</button>
+   <button type="button" class="btn btn-danger btn-lg btn-block  my-5"> Get Tickets Now </button>
    <!-- <button type="button" class="btn btn-danger my-5 btn-lg">Large button</button> -->
-   <p class="bg-black p-2">${playingNow.results[5].overview} </p>
+   <p class="bg-black bg-opacity-75 rounded p-2">${playingNow.results[5].overview} </p>
    </div>`)  
 
    $("#third-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[7].poster_path}" class="d-block w-100"  alt="..."> `)  
    $("#third-carousal").append(`<div class="carousel-caption">
 <p class="h1 text-light shadow shadow-lg " style="text-shadow: 4px 4px black;" > ${playingNow.results[7].title} </p>
 
-<button type="button" class="btn btn-lg  btn-block btn-danger my-5" >Take the Movie Now $200</button>
+<button type="button" class="btn btn-lg  btn-block btn-danger my-5" > Get Tickets Now </button>
 
 <!-- <button type="button" class="btn btn-danger my-5 btn-lg" style = "color:red">Large button</button> -->
-<p class="bg-black p-2">${playingNow.results[7].overview} </p>
+<p class="bg-black bg-opacity-75 rounded p-2">${playingNow.results[7].overview} </p>
 </div>`)   
 
 $("#first-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[3].poster_path}" class="d-block w-100"  alt="...">`)   
 $("#first-carousal").append(`<div class="carousel-caption">
 <p class="h1 text-light shadow shadow-lg " style="text-shadow: 4px 4px black  ;" > ${playingNow.results[3].title} </p>
-<button type="button" class="btn btn-danger btn-lg btn-block  my-5">Take the Movie Now $200</button>
+<button type="button" class="btn btn-danger btn-lg btn-block  my-5"> Get Tickets Now </button>
 <!-- <button type="button" class="btn btn-danger my-5 btn-lg">Large button</button> -->
-<p class="bg-black  p-2">${playingNow.results[3].overview} </p>
+<p class="bg-black bg-opacity-75 rounded p-2">${playingNow.results[3].overview} </p>
 </div>`)   
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 20; i++) {
 
         
 $("#NowPlayingContainer").append(`
@@ -144,8 +134,9 @@ $("#NowPlayingContainer").append(`
     onclick= "toggleFav(${playingNow.results[i].id},this)" ></i> 
         <h2>${playingNow.results[i].title} </h2>
         <p> ${playingNow.results[i].release_date} </p>
-        <p id="rating"> ${playingNow.results[i].vote_average}</p>
-        <div id="tags"> <span>Action</span> <span>Drama</span> </div>
+        <p id="rating"> ${Number(playingNow.results[i].vote_average).toFixed(1)}</p>
+        <div id="tags">
+        ${getFirstGener(i, 0, playingNow) !== undefined ?` <span>${getFirstGener(i, 0, playingNow)}</span>` : ""} ${getFirstGener(i, 1, playingNow) !== undefined ?` <span>${getFirstGener(i, 1, playingNow)}</span>` : ""} 
     </div>
 
 </div>`);
@@ -166,19 +157,12 @@ function goToTickets() {
     
 }
 
-// function takeTheMovie(obj) {
-//     alert(obj)
-// }
-    
-// (Math.round((topRated.results[i].vote_average*100)/100).toFixed(1))
 function toggleFav(id,elem) {
 if(elem.classList.contains("fa-regular")){
     selctedMovies.push(id);
     localStorage.setItem("favoriteList",JSON.stringify(selctedMovies));
     $(elem).removeClass("fa-regular");
    $(elem).addClass("fa-solid");
-   
-   
 }
 else if(elem.classList.contains("fa-solid")){
     var index = selctedMovies.indexOf(id);
@@ -189,11 +173,8 @@ else if(elem.classList.contains("fa-solid")){
    $(elem).addClass("fa-regular ");
 
        }
-   
-
 }
 }
-
 
 function addToFavorite(id,elem) {
 
@@ -203,10 +184,6 @@ $(elem).addClass("fa-solid fa-heart");
 
 
 }
-
-
-
-
 
 function removeFromFavorite(id,elem) {
 location.reload();
@@ -261,12 +238,7 @@ $("#favoriteContainer").append(favoritecard);
     
     }
 
-
-
 }
-
-
-
 
 function getNowPlayingFavorite(){
     // console.log(arr);
@@ -306,10 +278,6 @@ $("#favoriteContainer").append(favoritecard);
     }
 
 
-
-
-
-
 function getTheMovie(movie){ 
  
 console.log(movie);
@@ -317,22 +285,6 @@ popup.classList.add("open-popup");
 popup.innerHTML= toString(movie);
 
 }
-
-
-
-// $(document).ready(function(){
-//     var favoriteIcon = document.getElementById('favorite');
-//     favoriteIcon.addEventListener('click', addToFavorites);
-//     function  addToFavorites(event) {
-//        const card = event.target.parentNode.parentNode;
-//        favoriteCards.push(card);
-//        console.log(card);
-//        console.log(favoriteCards);
-//        // Add code to save the card as a favorite
-//      }
-
-
-
 
 
 $('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
@@ -345,57 +297,13 @@ $(this).toggleClass("active");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var card = ` <div class="card">
-//     <div class="poster">
-//         <img src="https://image.tmdb.org/t/p/w500">
-   
-//     </div>
-//     <div class="details">
-//      <i class="fa-regular fa-heart" id="favorite" ></i> 
-//         <h2> ${finalResults.results[0].title}  </h2>
-//         <p> Directed By quantin Tarantino </p>
-//         <p id="rating">7.5</p>
-//         <div id="tags"> <span>Action</span> <span>Drama</span> </div>
-//     </div>
-
-//     </div>`;
-
-
-var popup = document.getElementById("popup")
-
-
-// function openPopUp(){
-    
-// }
-function closePopUp(){
-    popup.classList.remove("open-popup")
-}
-
-
-
-
-
-
 async function getpopular() {
     var data = await fetch("http://api.themoviedb.org/3/movie/popular?api_key=24ce3ad943eaffe233b9fe1d4450ba6c");
     mostPop = await data.json();
     console.log(mostPop);
     var x = $("#mostPoupler");
     console.log(x);
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 20; i++) {
     
     // console.log(allGener(i));
     var card = `<div class="card" onclick = "getTheMovie(this)">
@@ -414,8 +322,10 @@ async function getpopular() {
     <p>${mostPop.results[i].release_date}  </p>
     <p id="rating">${Number( mostPop.results[i].vote_average).toFixed(1)}</p>
     
-    <div id="tags"> <span id="firstgener">20</span> 
-     </div>
+    <div id="tags">
+    ${getFirstGener(i, 0, mostPop) !== undefined ? ` <span>${getFirstGener(i, 0, mostPop)}</span>` : ""} 
+    ${getFirstGener(i, 1, mostPop) !== undefined ?` <span>${getFirstGener(i, 1, mostPop)}</span>` : ""} 
+    </div>
     
     </div>
     
@@ -426,17 +336,9 @@ async function getpopular() {
         card
     )
     
-    
-    
     }
     
     };
-
-  
-
-
-// var isSelected = false;
-
 
 
 //? nav current page //
@@ -456,8 +358,6 @@ links.forEach(function(link) {
 });
 
 
-
-
 if(localStorage.getItem("userName")){
     var elems=localStorage.getItem("userName");
     var logedInfo = document.getElementsByClassName("loged");
@@ -472,10 +372,6 @@ if(localStorage.getItem("userName")){
         notlogedInfo[i].style.display = 'block';
       }
 }
-
-
-
-
 
 var inputElement = $("#movie-name")[0]
 
@@ -493,8 +389,6 @@ function loadingData() {
   const greetingValue = urlParams.get('searchValue');
   console.log(greetingValue);
 }
-
-
 
 async function getSearch() {
 
@@ -519,7 +413,7 @@ async function getSearch() {
 
 
       var mySearch = document.getElementById("SearchContainer");
-      mySearch.innerHTML= " ";
+      mySearch.innerHTML= "";
     //   $("#SearchContainer").append(" ");
     
     function load() {
@@ -557,12 +451,6 @@ async function getSearch() {
             )
             }}
 
-
-
-            //search
-
-            
-
 var inputElement = $("#movie-name")[0]
 
 var movieWrapper = $("#movie-wrapper")
@@ -572,22 +460,8 @@ var myinput = document.getElementById("search")[0];
 console.log(movieWrapper)
 
 
-
-// function loadingData() {
-//     // localStorage.setItem("movieSearch",input.value);
-//         const urlParams = new URLSearchParams(window.location.search);
-//   const greetingValue = urlParams.get('searchValue');
-//   console.log(greetingValue);
-// }
-
-
-
 async function getSearch() {
 
-    
-
-//      sessionStorage.setItem("searchString",input.value);
-//    var searchString =sessionStorage.getItem("searchString");
 
     const options = {
         method: 'GET',
@@ -632,39 +506,15 @@ async function getSearch() {
       <p>${mydata.results[i].release_date}  </p>
       <p id="rating">${Number( mydata.results[i].vote_average).toFixed(1)}</p>
       
-      <div id="tags"> <span id="firstgener">${getFirstGener(i,0)}</span> 
-       </div>
+      <div id="tags">
+      ${getFirstGener(i, 0, mydata) !== undefined ? ` <span>${getFirstGener(i, 0, mydata)}</span>` : ""} 
+      ${getFirstGener(i, 1, mydata) !== undefined ?` <span>${getFirstGener(i, 1, mydata)}</span>` : ""} 
+  </div>
       
       </div>
       
-      </div>
-
-                `
+      </div>`
             )
-
-    //           mySearch.innerHTML = `<div class="card" onclick = "getTheMovie(this)">
-    //   <div class="poster">
-    //   <img src="https://image.tmdb.org/t/p/w500${mydata.results[i].poster_path}">
-      
-    //   </div>
-    //   <div class="details">
-    //   <i class="fa-solid" :"fa-regular"} fa-heart favorite"
-    //   id="favorite" 
-      
-    //   onclick= "toggleFav(${mydata.results[i].id},this)" ></i> 
-      
-      
-    //   <h2> ${mydata.results[i].title}  </h2>
-    //   <p>${mydata.results[i].release_date}  </p>
-    //   <p id="rating">${Number( mydata.results[2].vote_average).toFixed(1)}</p>
-      
-    //   <div id="tags"> <span id="firstgener">20</span> 
-    //    </div>
-      
-    //   </div>
-      
-    //   </div>`;
-
         }
     
 

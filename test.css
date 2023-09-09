@@ -5,6 +5,9 @@
     padding: 0;
 }
 body{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 .carousel-item img{
     height: 100vh;
@@ -14,8 +17,17 @@ body{
 
 .btn-outline-success:hover {
     background-color: transparent;
-    border: 1px solid r#009ad8ed;
+    border: 1px solid #009ad8ed;
     color: #009ad8;
+}
+.btn-outline-success{
+    border: 1px solid white;
+    color: white;
+    --bs-btn-hover-border-color: #009ad8;
+	--bs-btn-active-bg: transparent;
+	--bs-btn-border-color: transparent;
+	--bs-btn-active-border-color:var(--bs-btn-hover-border-color);
+	--bs-btn-active-color:var(--bs-btn-hover-border-color);
 }
 .navbar-toggler:hover{
     color: #009ad8;
@@ -199,6 +211,15 @@ text-shadow: 2px 2px  #2B2C28;
 nav{
  position: relative;
 }
+
+.cards2,.cards3,.cards4{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
 
 #cardContainer ,#mostPoupler ,#SearchContainer,#NowPlayingContainer,#favoriteContainer{
     

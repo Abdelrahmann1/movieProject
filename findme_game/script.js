@@ -46,5 +46,6 @@ image_Element.addEventListener('click', () => {
     overlay.classList.add('is-open');
     clearInterval(interval); 
     setTimeout(function () { alert("Winner Winner Chicken Dinner"); }, 1000);
+    document.body.style.cursor = 'default';
     //TODO navigate back to games screen
 })
