@@ -100,7 +100,7 @@ function getRandomInt(max) {
 (async function nowPlaying(){ 
    var Response =await fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=24ce3ad943eaffe233b9fe1d4450ba6c")
    playingNow = await Response.json();
-    
+   
    
    $("#second-carousal").append(`<img style="filter: blur(2px)" src="https://image.tmdb.org/t/p/w500${playingNow.results[5].poster_path}" class="d-block w-100" " alt="...">`)  
    $("#second-carousal").append(`<div class="carousel-caption">
@@ -414,7 +414,7 @@ async function getpopular() {
     <p>${mostPop.results[i].release_date}  </p>
     <p id="rating">${Number( mostPop.results[i].vote_average).toFixed(1)}</p>
     
-    <div id="tags"> <span id="firstgener">20</span> 
+    <div id="tags"> <span id="firstgener"> 20</span> 
      </div>
     
     </div>
@@ -501,7 +501,7 @@ async function getSearch() {
 
 
       var mySearch = document.getElementById("SearchContainer");
-      mySearch.innerHTML= " ";
+      mySearch.innerHTML= "";
     //   $("#SearchContainer").append(" ");
     
     function load() {

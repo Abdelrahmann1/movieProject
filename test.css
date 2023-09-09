@@ -200,6 +200,15 @@ nav{
  position: relative;
 }
 
+.cards2,.cards3,.cards4{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
 #cardContainer ,#mostPoupler ,#SearchContainer,#NowPlayingContainer,#favoriteContainer{
     
     margin-right: 40px;
