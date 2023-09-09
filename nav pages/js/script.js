@@ -728,3 +728,13 @@ function test() {
   var x = localStorage.getItem("movieSearch");
     alert(x);
 }
+
+
+
+
+function logOut(){
+localStorage.clear()
+location.reload()
+
+}
+

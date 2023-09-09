@@ -16,6 +16,9 @@ function openPopUp(){
 }
 function closePopUp(){
     popup.classList.remove("open-popup")
+    window.location.href = " ";
+    // location of page
+
     
 }
 
