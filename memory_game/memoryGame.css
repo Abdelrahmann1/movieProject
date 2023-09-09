@@ -5,7 +5,7 @@
   }
   
 body{
-  height: 100vh;
+  /* height: 100vh; */
   background: linear-gradient(#141e30, #243b55);
  
 
@@ -73,6 +73,12 @@ main{
    transform: translate(-50% ,-50%) scale(1);
  
  }
+ .time-txt{
+  padding-right: 10px ;
+ }
+ #response{
+  margin-top: 50px;
+ }
  
  .popup button{
    width: 100%;
@@ -87,4 +93,15 @@ main{
    cursor: pointer;
    box-shadow: 0 25px 5px rgba(0,0,0,0.1) ;
  }
+.deader{
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content:space-evenly;
+
+}
+.elementDicretion{
+  display: flex;
+  flex-direction: row;
+}
 
