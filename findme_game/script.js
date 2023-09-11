@@ -1,5 +1,10 @@
 const span = document.querySelector('.hover-btn2');
 const overlay = document.querySelector('.overlay');
+var background_audio = new Audio('../assets/audio/background.mp3');
+var cheer = new Audio('../assets/audio/clap.mp3');
+cheer.muted = true;
+background_audio.muted = true;
+background_audio.loop = true;
 
 var interval;
 
@@ -32,6 +37,8 @@ function Prep(){
     
     var changeInterval = 5000;
     interval = setInterval(moveImage, changeInterval);
+    background_audio.muted = false;
+    background_audio.play();
 }
 
 function moveImage(){
@@ -45,7 +52,10 @@ function moveImage(){
 image_Element.addEventListener('click', () => {
     overlay.classList.add('is-open');
     clearInterval(interval); 
-    setTimeout(function () { alert("Winner Winner Chicken Dinner"); }, 1000);
     document.body.style.cursor = 'default';
-    //TODO navigate back to games screen
+    background_audio.pause();
+    cheer.muted = false;
+    cheer.play();
+    setTimeout(function () { alert("Winner Winner Chicken Dinner");}, 2000);
+    setTimeout(function () { window.history.back()}, 3000);
 })
