@@ -34,7 +34,7 @@ section {
     -moz-transition: clip-path 100ms;
     -ms-transition: clip-path 100ms;
     -o-transition: clip-path 100ms;
-    background-image:url('../assets/images/theater.jpg');
+    background-image:url('../../assets/images/theater.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }

@@ -1,7 +1,7 @@
 const span = document.querySelector('.hover-btn2');
 const overlay = document.querySelector('.overlay');
-var background_audio = new Audio('../assets/audio/background.mp3');
-var cheer = new Audio('../assets/audio/clap.mp3');
+var background_audio = new Audio('../../assets/audio/background.mp3');
+var cheer = new Audio('../../assets/audio/clap.mp3');
 cheer.muted = true;
 background_audio.muted = true;
 background_audio.loop = true;

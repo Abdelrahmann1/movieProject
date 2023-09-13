@@ -81,7 +81,7 @@ header ul li a {
 #cards_home{
     display: flex; 
     justify-content:space-around;
-    
+    margin: 0;
 }
 
 #clear{
