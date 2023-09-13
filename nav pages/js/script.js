@@ -357,7 +357,6 @@ links.forEach(function(link) {
   });
 });
 
-
 if(localStorage.getItem("userName")){
     var elems=localStorage.getItem("userName");
     var logedInfo = document.getElementsByClassName("loged");
