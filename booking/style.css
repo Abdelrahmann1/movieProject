@@ -173,7 +173,7 @@ p.text span {
 /* @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One|Butcherman|Montserrat:900"); */
 
 :root {
-  --red: #242333;
+  --primary: #242333;
   --gray: #e9e9e9;
 }
 
@@ -220,7 +220,7 @@ p.text span {
   left: 35px;
   font-family: "Alfa Slab One", cursive;
   font-size: 22px;
-  color: var(--red);
+  color: var(--primary);
 }
 
 .first-letter {
@@ -299,4 +299,20 @@ img {
     black 25px,
     black 26px
   );
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 12px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.123);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.5, #0a0a6bb0), color-stop(1, #040229));
+  border-radius: 10px;
 }
