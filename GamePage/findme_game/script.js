@@ -1,7 +1,7 @@
 const span = document.querySelector('.hover-btn2');
 const overlay = document.querySelector('.overlay');
-var background_audio = new Audio('../assets/audio/background.mp3');
-var cheer = new Audio('../assets/audio/clap.mp3');
+var background_audio = new Audio('../../assets/audio/background.mp3');
+var cheer = new Audio('../../assets/audio/clap.mp3');
 cheer.muted = true;
 background_audio.muted = true;
 background_audio.loop = true;
@@ -44,7 +44,6 @@ function Prep(){
 function moveImage(){
     var randNum_V = Math.round(Math.random() * availSpace_V);
     var randNum_H = Math.round(Math.random() * availSpace_H);
-    
     image_Element.style.top = randNum_V + "px";
     image_Element.style.left = randNum_H + "px";
 }
