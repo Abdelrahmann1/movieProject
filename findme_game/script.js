@@ -44,7 +44,6 @@ function Prep(){
 function moveImage(){
     var randNum_V = Math.round(Math.random() * availSpace_V);
     var randNum_H = Math.round(Math.random() * availSpace_H);
-    
     image_Element.style.top = randNum_V + "px";
     image_Element.style.left = randNum_H + "px";
 }
