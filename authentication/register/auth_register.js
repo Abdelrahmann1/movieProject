@@ -7,8 +7,6 @@ function validateFormAndSetUserInfo() {
   var passwordInput = document.forms["myForm"]["password"].value;
   var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
   if (emailInput == "") {
-    // response.innerHTML = "Creating Email succsuccessfully"
-    // openPopUp();
     alert("Email must be filled out");
     return false;
   } else if (!emailInput.match(emailRegex)) {
