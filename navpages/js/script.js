@@ -153,7 +153,7 @@ $("#NowPlayingContainer").append(`
 })()
  
 function goToTickets() {
-    window.location = "../../booking/booking.html";
+    window.location = "../booking/booking.html";
     
 }
 
