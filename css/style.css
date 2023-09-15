@@ -174,3 +174,10 @@ header ul li a {
 #btn2:hover{
     border: 1px solid #009ad8;; 
 }
+
+.notLoged a{
+    text-decoration:none
+}
+.col img{
+    width: 150px;
+}
