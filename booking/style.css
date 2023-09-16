@@ -185,6 +185,9 @@ p.text span {
   min-width: 40%;
   margin: 10px;
   background: black;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 
@@ -221,6 +224,7 @@ p.text span {
   font-family: "Alfa Slab One", cursive;
   font-size: 22px;
   color: var(--primary);
+  z-index: 1;
 }
 
 .first-letter {
@@ -235,7 +239,6 @@ p.text span {
   .title {
     font-size: 15px;
   }
-
 }
 @media only screen and (max-width: 900px) {
   .ticket {
@@ -246,7 +249,7 @@ p.text span {
   }
 }
 
-#t_name,#t_seats{
+#t_name,#t_seats ,#t_time{
   color: white;
 }
 

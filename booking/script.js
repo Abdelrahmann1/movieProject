@@ -6,8 +6,16 @@ var movieSelect = document.getElementById('movie');
 
 var t_name = document.getElementById("t_name");
 var t_seats = document.getElementById("t_seats");
+var t_time = document.getElementById("t_time");
 
 let ticketPrice = 200;
+
+var currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 1);
+t_time.innerHTML = `${currentDate.toDateString()} <br>
+&emsp;&emsp;&emsp; ${currentDate.getHours()}:00:00`;
+
+
 //Update total and count
 function updateSelectedCount() {
     var selectedSeats = document.querySelectorAll('.row .seat.selected');
@@ -18,7 +26,6 @@ function updateSelectedCount() {
     
 }
 //Seat click event
-
 container.addEventListener('click', e => {
   if (e.target.classList.contains('seat') &&
      !e.target.classList.contains('occupied')) {
